@@ -109,32 +109,13 @@ If the dashboard is public and the frontend repos are in another org (`sentikate
 
 ### 2. Publish after every Spectra PR gate
 
-In the frontend repo, upload reports on pass **or** fail, then call the reusable workflow. Full snippet: [`examples/spectra-pr-publish-snippet.yml`](examples/spectra-pr-publish-snippet.yml).
+In the frontend repo, upload reports on pass **or** fail, then run a **normal job** that checks out this dashboard with `SPECTRA_DASHBOARD_TOKEN` and runs `scripts/ci-ingest.mjs`. That is what `sentikatech-frontend` uses.
 
-```yaml
-      - name: Upload Spectra reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
-          path: spectra/reports/**
-          retention-days: 14
-          if-no-files-found: ignore
+Full snippet: [`examples/spectra-pr-publish-snippet.yml`](examples/spectra-pr-publish-snippet.yml).
 
-      - name: Publish run to health dashboard
-        if: always()
-        uses: sentikatechOrg/spectra-health-dashboard/.github/workflows/ingest.yml@main
-        with:
-          report_artifact_name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
-        secrets:
-          DASHBOARD_TOKEN: ${{ secrets.SPECTRA_DASHBOARD_TOKEN }}
-```
+Do not call `ingest.yml` as a step inside the suite job. GitHub reusable workflows must be their own job, and that path was rejected at startup in this org — the inline job above is the supported path.
 
-If this dashboard is forked to another org, change the `uses:` path and update `org`, `repo`, and `pagesBase` in `dashboard.config.json`.
-
-### 3. Allow the reusable workflow
-
-In the frontend repo: **Settings → Actions → General → Access** — allow reusable workflows from the dashboard owner.
+If you copy this dashboard to another org, change the `repository:` line in the snippet and update `org`, `repo`, and `pagesBase` in `dashboard.config.json`.
 
 The ingest job writes `data/runs/{id}.json`, updates `data/manifest.json`, and commits to `main`. Pages then redeploys.
 
