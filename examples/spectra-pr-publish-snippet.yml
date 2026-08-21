@@ -1,5 +1,8 @@
-# Add these steps to a frontend repo's spectra-pr.yml after the suite run.
-# Upload on pass or fail, then publish into the health dashboard.
+# Copy into a frontend repo Spectra workflow (e.g. spectra-pr.yml).
+# Upload reports on pass or fail, then publish with a normal job (not a reusable workflow).
+#
+# Secret on the frontend repo: SPECTRA_DASHBOARD_TOKEN
+#   fine-grained PAT, Contents: Read and write on sentikatechOrg/spectra-health-dashboard
 
       - name: Upload Spectra reports
         if: always()
@@ -10,11 +13,56 @@
           retention-days: 14
           if-no-files-found: ignore
 
-      - name: Publish run to health dashboard
-        if: always()
-        uses: sentikatechOrg/spectra-health-dashboard/.github/workflows/ingest.yml@main
+  publish-health:
+    name: publish-to-health-dashboard
+    needs: alarm
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Checkout health dashboard
+        uses: actions/checkout@v4
         with:
-          report_artifact_name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
-          dashboard_repo: sentikatechOrg/spectra-health-dashboard
-        secrets:
-          DASHBOARD_TOKEN: ${{ secrets.SPECTRA_DASHBOARD_TOKEN }}
+          repository: sentikatechOrg/spectra-health-dashboard
+          token: ${{ secrets.SPECTRA_DASHBOARD_TOKEN }}
+          path: dashboard
+
+      - name: Download Spectra reports
+        uses: actions/download-artifact@v4
+        with:
+          name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
+          path: reports
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Ingest report and push to dashboard
+        working-directory: dashboard
+        env:
+          SOURCE_REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+          PR: ${{ github.event.pull_request.number }}
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          WORKFLOW_URL="https://github.com/${SOURCE_REPO}/actions/runs/${RUN_ID}"
+          node scripts/ci-ingest.mjs \
+            --reports ../reports \
+            --data data \
+            --repo "$SOURCE_REPO" \
+            --run-id "$RUN_ID" \
+            --pr "$PR" \
+            --branch "$BRANCH" \
+            --workflow-url "$WORKFLOW_URL"
+          git config user.name "spectra-health-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --staged --quiet; then
+            echo "No data changes"
+            exit 0
+          fi
+          git commit -m "ingest: ${SOURCE_REPO} run ${RUN_ID}"
+          git push
