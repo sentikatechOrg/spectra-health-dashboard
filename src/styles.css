@@ -182,8 +182,13 @@ tr.clickable:hover { background: #f6f8fb; }
 
 .calendars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px 24px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px 28px;
+  align-items: start;
+}
+.month-cal {
+  min-width: 0;
+  max-width: 360px;
 }
 .month-cal h4 {
   margin: 0 0 10px;
@@ -191,8 +196,9 @@ tr.clickable:hover { background: #f6f8fb; }
 }
 .cal-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 4px;
+  align-content: start;
 }
 .cal-dow {
   text-align: center;
@@ -201,9 +207,11 @@ tr.clickable:hover { background: #f6f8fb; }
   font-weight: 700;
   letter-spacing: 0.03em;
   padding-bottom: 4px;
+  min-width: 0;
 }
 .cal-cell {
-  min-height: 48px;
+  min-width: 0;
+  min-height: 44px;
   border-radius: 6px;
   background: #f4f5f7;
   color: var(--ink);
@@ -213,6 +221,7 @@ tr.clickable:hover { background: #f6f8fb; }
   justify-content: center;
   padding: 4px 2px;
   border: 1px solid #e6e8ec;
+  overflow: hidden;
 }
 .cal-cell.pad { background: transparent; border-color: transparent; }
 .cal-cell.empty { color: #7a8699; }
@@ -220,7 +229,15 @@ tr.clickable:hover { background: #f6f8fb; }
 .cal-cell.bad { background: var(--bad-soft); border-color: #f3b8b3; color: #9b221c; }
 .cal-cell.mixed { background: var(--watch-soft); border-color: #f3d5a3; color: #9a5304; }
 .cal-num { font-weight: 700; font-size: 0.85rem; line-height: 1.1; }
-.cal-status { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.02em; min-height: 0.75rem; }
+.cal-status {
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
 .heat-legend { display: flex; gap: 12px; color: var(--muted); font-size: 0.78rem; margin-top: 12px; flex-wrap: wrap; }
 .heat-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .swatch { width: 10px; height: 10px; border-radius: 2px; }

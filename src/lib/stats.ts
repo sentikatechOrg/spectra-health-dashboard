@@ -1,3 +1,4 @@
+import { localDateKey } from "./format";
 import type { ManifestRun, RangeKey } from "../types";
 
 export function filterByRange(runs: ManifestRun[], range: RangeKey, now = Date.now()): ManifestRun[] {
@@ -33,7 +34,7 @@ export function trendPoints(runs: ManifestRun[]) {
   const byDay = new Map<string, ManifestRun[]>();
   const sorted = [...runs].sort((a, b) => Date.parse(a.started_at) - Date.parse(b.started_at));
   for (const run of sorted) {
-    const day = run.started_at.slice(0, 10);
+    const day = localDateKey(run.started_at);
     const list = byDay.get(day) || [];
     list.push(run);
     byDay.set(day, list);
@@ -78,7 +79,7 @@ export function groupByRepo(runs: ManifestRun[]) {
     const stats = totals(sorted);
     const latest = sorted[sorted.length - 1];
     const spark = sorted.map((run) => ({
-      day: run.started_at.slice(0, 10),
+      day: localDateKey(run.started_at),
       passRate: Math.round(run.pass_rate * 100),
     }));
     const hasPass = sorted.some((run) => run.status === "passed");
@@ -130,7 +131,7 @@ export function verdict(runs: ManifestRun[]): { title: string; detail: string; t
 export function dayHealth(runs: ManifestRun[]): Map<string, "good" | "bad" | "mixed"> {
   const map = new Map<string, ManifestRun[]>();
   for (const run of runs) {
-    const day = run.started_at.slice(0, 10);
+    const day = localDateKey(run.started_at);
     const list = map.get(day) || [];
     list.push(run);
     map.set(day, list);

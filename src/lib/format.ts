@@ -28,6 +28,16 @@ export function formatDate(iso?: string): string {
   });
 }
 
+/** Calendar day in the viewer's timezone, matching the Latest runs table. */
+export function localDateKey(iso?: string, date = iso ? new Date(iso) : undefined): string {
+  const value = date ?? new Date();
+  if (Number.isNaN(value.getTime())) return "";
+  const year = value.getFullYear();
+  const month = String(value.getMonth() + 1).padStart(2, "0");
+  const day = String(value.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 export function formatDay(iso?: string): string {
   if (!iso) return "—";
   const date = new Date(iso);
