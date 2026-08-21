@@ -1,25 +1,25 @@
+import { localDateKey } from "../lib/format";
 import { dayHealth } from "../lib/stats";
 import type { ManifestRun } from "../types";
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-function utcKey(year: number, month: number, day: number): string {
+function monthKey(year: number, month: number, day: number): string {
   return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
 function monthsToShow(runs: ManifestRun[]): { year: number; month: number }[] {
   const now = new Date();
   const end = new Date(now.getFullYear(), now.getMonth(), 1);
-  let start = new Date(end.getFullYear(), end.getMonth() - 1, 1);
+  let start = new Date(end);
 
   if (runs.length) {
-    const earliest = new Date(Math.min(...runs.map((run) => Date.parse(run.started_at))));
-    const earliestMonth = new Date(earliest.getFullYear(), earliest.getMonth(), 1);
-    if (earliestMonth < start) start = earliestMonth;
+    const times = runs.map((run) => Date.parse(run.started_at)).filter((time) => !Number.isNaN(time));
+    const earliest = new Date(Math.min(...times));
+    const latest = new Date(Math.max(...times, now.getTime()));
+    start = new Date(earliest.getFullYear(), earliest.getMonth(), 1);
+    end.setFullYear(latest.getFullYear(), latest.getMonth(), 1);
   }
-
-  const cap = new Date(end.getFullYear(), end.getMonth() - 3, 1);
-  if (start < cap) start = cap;
 
   const months: { year: number; month: number }[] = [];
   for (let cursor = new Date(start); cursor <= end; cursor.setMonth(cursor.getMonth() + 1)) {
@@ -48,7 +48,7 @@ export function Heatmap({ runs }: { runs: ManifestRun[] }) {
   const health = dayHealth(runs);
   const counts = new Map<string, number>();
   for (const run of runs) {
-    const day = run.started_at.slice(0, 10);
+    const day = localDateKey(run.started_at);
     counts.set(day, (counts.get(day) || 0) + 1);
   }
 
@@ -68,7 +68,7 @@ export function Heatmap({ runs }: { runs: ManifestRun[] }) {
                 ))}
                 {monthCells(year, month).map((day, index) => {
                   if (day == null) return <div key={`pad-${index}`} className="cal-cell pad" />;
-                  const key = utcKey(year, month, day);
+                  const key = monthKey(year, month, day);
                   const tone = health.get(key);
                   const count = counts.get(key) || 0;
                   return (
