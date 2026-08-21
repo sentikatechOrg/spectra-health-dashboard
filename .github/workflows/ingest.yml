@@ -1,0 +1,131 @@
+name: Ingest Spectra report
+
+on:
+  workflow_call:
+    inputs:
+      report_artifact_name:
+        description: Artifact name uploaded by the caller (spectra-reports-pr-N)
+        required: true
+        type: string
+      dashboard_repo:
+        description: "Owner/name of this dashboard repo"
+        required: false
+        type: string
+        default: aesstechnologies/spectra-health-dashboard
+      source_repo:
+        description: "Caller repo (org/name). Defaults to the calling repository."
+        required: false
+        type: string
+        default: ""
+    secrets:
+      DASHBOARD_TOKEN:
+        description: PAT or GitHub App token with contents:write on the dashboard repo
+        required: true
+
+  workflow_dispatch:
+    inputs:
+      report_artifact_name:
+        description: Artifact name on the source workflow run
+        required: true
+        type: string
+      source_repo:
+        description: "org/name that produced the artifact"
+        required: true
+        type: string
+      source_run_id:
+        description: GitHub Actions run id that uploaded the artifact
+        required: true
+        type: string
+      pr:
+        description: Pull request number (optional)
+        required: false
+        type: string
+      branch:
+        description: Branch name (optional)
+        required: false
+        type: string
+
+  repository_dispatch:
+    types: [spectra-ingest]
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - name: Resolve dashboard repo
+        id: meta
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_DASHBOARD: ${{ inputs.dashboard_repo }}
+        run: |
+          if [ "$EVENT_NAME" = "repository_dispatch" ] || [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "dashboard_repo=${GITHUB_REPOSITORY}" >> "$GITHUB_OUTPUT"
+          else
+            echo "dashboard_repo=${INPUT_DASHBOARD:-$GITHUB_REPOSITORY}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout dashboard
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.meta.outputs.dashboard_repo }}
+          token: ${{ secrets.DASHBOARD_TOKEN || secrets.GITHUB_TOKEN }}
+          path: dashboard
+
+      - name: Download artifact from this workflow run
+        if: ${{ !inputs.source_run_id && github.event_name != 'repository_dispatch' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.report_artifact_name }}
+          path: reports
+
+      - name: Download artifact from another workflow run
+        if: ${{ inputs.source_run_id != '' || github.event_name == 'repository_dispatch' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.report_artifact_name || github.event.client_payload.report_artifact_name }}
+          path: reports
+          github-token: ${{ secrets.DASHBOARD_TOKEN || secrets.GITHUB_TOKEN }}
+          repository: ${{ inputs.source_repo || github.event.client_payload.source_repo }}
+          run-id: ${{ inputs.source_run_id || github.event.client_payload.source_run_id }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Normalize report and update manifest
+        working-directory: dashboard
+        env:
+          SOURCE_REPO: ${{ inputs.source_repo || github.event.client_payload.source_repo || github.repository }}
+          RUN_ID: ${{ inputs.source_run_id || github.event.client_payload.source_run_id || github.run_id }}
+          PR: ${{ inputs.pr || github.event.client_payload.pr || github.event.pull_request.number }}
+          BRANCH: ${{ inputs.branch || github.event.client_payload.branch || github.head_ref || github.ref_name }}
+          WORKFLOW_URL: ${{ github.event.client_payload.workflow_url }}
+        run: |
+          if [ -z "$WORKFLOW_URL" ]; then
+            WORKFLOW_URL="https://github.com/${SOURCE_REPO}/actions/runs/${RUN_ID}"
+          fi
+          node scripts/ci-ingest.mjs \
+            --reports ../reports \
+            --data data \
+            --repo "$SOURCE_REPO" \
+            --run-id "$RUN_ID" \
+            --pr "$PR" \
+            --branch "$BRANCH" \
+            --workflow-url "$WORKFLOW_URL"
+
+      - name: Commit ingested run
+        working-directory: dashboard
+        run: |
+          git config user.name "spectra-health-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --staged --quiet; then
+            echo "No data changes"
+            exit 0
+          fi
+          git commit -m "ingest: ${{ inputs.source_repo || github.repository }} run ${{ inputs.source_run_id || github.run_id }}"
+          git push

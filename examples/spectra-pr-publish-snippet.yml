@@ -1,0 +1,20 @@
+# Add these steps to a frontend repo's spectra-pr.yml after the suite run.
+# Upload on pass or fail, then publish into the health dashboard.
+
+      - name: Upload Spectra reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
+          path: spectra/reports/**
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Publish run to health dashboard
+        if: always()
+        uses: aesstechnologies/spectra-health-dashboard/.github/workflows/ingest.yml@main
+        with:
+          report_artifact_name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
+          dashboard_repo: aesstechnologies/spectra-health-dashboard
+        secrets:
+          DASHBOARD_TOKEN: ${{ secrets.SPECTRA_DASHBOARD_TOKEN }}
