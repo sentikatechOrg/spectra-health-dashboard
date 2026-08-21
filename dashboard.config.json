@@ -1,0 +1,12 @@
+{
+  "org": "aesstechnologies",
+  "repo": "spectra-health-dashboard",
+  "title": "Spectra Test Health",
+  "subtitle": "Are our apps getting healthier or slipping?",
+  "pagesBase": "/spectra-health-dashboard/",
+  "manifestCap": 500,
+  "connectedRepos": [
+    "sentikatechOrg/sentikatech-frontend",
+    "sentikatechOrg/sentikatech-webapp"
+  ]
+}

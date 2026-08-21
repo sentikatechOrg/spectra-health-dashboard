@@ -1,0 +1,31 @@
+{
+  "suite": "alarm",
+  "started_at": "2026-08-21T21:09:04.962Z",
+  "finished_at": "2026-08-21T21:14:12.184Z",
+  "duration_ms": 307222,
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "metadata": {
+    "spectra_version": "0.1.0",
+    "suite_file": "alarm.yaml",
+    "frontend": {
+      "path": "/home/runner/work/sentikatech-frontend",
+      "commit": "a1c4e92deadbeef",
+      "short_commit": "a1c4e92",
+      "branch": "feat/spectra-pr-gate"
+    }
+  },
+  "cases": [
+    {
+      "id": "AL-001",
+      "name": "Set up an alarm",
+      "status": "passed",
+      "duration_ms": 299436,
+      "steps": [
+        { "stepIndex": 0, "type": "ui.wait", "status": "passed", "duration_ms": 1840, "description": "Home Page" }
+      ]
+    }
+  ]
+}

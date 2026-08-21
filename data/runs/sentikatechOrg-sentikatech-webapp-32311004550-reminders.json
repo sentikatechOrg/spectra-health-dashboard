@@ -1,0 +1,73 @@
+{
+  "id": "sentikatechOrg-sentikatech-webapp-32311004550-reminders",
+  "repo": "sentikatechOrg/sentikatech-webapp",
+  "org": "sentikatechOrg",
+  "suite": "reminders",
+  "status": "failed",
+  "pass_rate": 0.5,
+  "started_at": "2026-08-05T14:22:08.200Z",
+  "finished_at": "2026-08-05T14:24:41.900Z",
+  "duration_ms": 153700,
+  "pr": 18,
+  "branch": "fix/reminder-list",
+  "commit": "e9f2aa1",
+  "github_run_id": "32311004550",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-webapp/actions/runs/32311004550",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-webapp/actions/runs/32311004550",
+  "ingested_at": "2026-08-05T14:25:10.000Z",
+  "frontend_commit": "e9f2aa1",
+  "frontend_branch": "fix/reminder-list",
+  "spectra_version": "0.1.0",
+  "suite_file": "reminders.yaml",
+  "cases_passed": 1,
+  "cases_failed": 1,
+  "cases_skipped": 0,
+  "cases_total": 2,
+  "failed_steps": [
+    {
+      "case_id": "RM-002",
+      "case_name": "Create a medicine reminder",
+      "step": 4,
+      "type": "ui.click",
+      "selector": "role=button[name=\"Save reminder\"]",
+      "message": "Locator not found: role=button[name=\"Save reminder\"]. Visible buttons: Save, Cancel.",
+      "screenshot": "artifacts/rm-002-step-4-save.png"
+    }
+  ],
+  "cases": [
+    {
+      "id": "RM-001",
+      "name": "Open reminders from home",
+      "status": "passed",
+      "duration_ms": 18440,
+      "steps": [
+        { "stepIndex": 0, "type": "ui.wait", "description": "Home page ready", "status": "passed", "duration_ms": 2200 },
+        { "stepIndex": 1, "type": "ui.click", "description": "Open Reminders", "status": "passed", "duration_ms": 340 },
+        { "stepIndex": 2, "type": "ui.wait", "description": "Reminders list visible", "status": "passed", "duration_ms": 890 }
+      ]
+    },
+    {
+      "id": "RM-002",
+      "name": "Create a medicine reminder",
+      "status": "failed",
+      "duration_ms": 41220,
+      "error": "Locator not found: role=button[name=\"Save reminder\"]",
+      "steps": [
+        { "stepIndex": 0, "type": "ui.click", "description": "Add reminder", "status": "passed", "duration_ms": 280 },
+        { "stepIndex": 1, "type": "ui.fill", "description": "Enter medicine name", "status": "passed", "duration_ms": 410 },
+        { "stepIndex": 2, "type": "ui.click", "description": "Pick time", "status": "passed", "duration_ms": 360 },
+        {
+          "stepIndex": 3,
+          "type": "ui.click",
+          "description": "Save reminder",
+          "status": "failed",
+          "duration_ms": 8040,
+          "message": "Locator not found: role=button[name=\"Save reminder\"]. Visible buttons: Save, Cancel.",
+          "artifacts": {
+            "screenshot": "artifacts/rm-002-step-4-save.png"
+          }
+        }
+      ]
+    }
+  ]
+}
