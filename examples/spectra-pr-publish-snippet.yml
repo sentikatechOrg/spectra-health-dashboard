@@ -12,9 +12,9 @@
 
       - name: Publish run to health dashboard
         if: always()
-        uses: aesstechnologies/spectra-health-dashboard/.github/workflows/ingest.yml@main
+        uses: sentikatechOrg/spectra-health-dashboard/.github/workflows/ingest.yml@main
         with:
           report_artifact_name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
-          dashboard_repo: aesstechnologies/spectra-health-dashboard
+          dashboard_repo: sentikatechOrg/spectra-health-dashboard
         secrets:
           DASHBOARD_TOKEN: ${{ secrets.SPECTRA_DASHBOARD_TOKEN }}

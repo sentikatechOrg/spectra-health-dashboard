@@ -96,7 +96,7 @@ export function OverviewPage() {
 
       <article className="card" style={{ marginBottom: 12 }}>
         <h3>Daily health</h3>
-        <p className="sub">Green = all passed that day. Red = something failed.</p>
+        <p className="sub">A normal month calendar. Each dated square is one day — Passed, Failed, Mixed, or no run.</p>
         <Heatmap runs={visible} />
       </article>
 

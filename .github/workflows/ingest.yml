@@ -11,7 +11,7 @@ on:
         description: "Owner/name of this dashboard repo"
         required: false
         type: string
-        default: aesstechnologies/spectra-health-dashboard
+        default: sentikatechOrg/spectra-health-dashboard
       source_repo:
         description: "Caller repo (org/name). Defaults to the calling repository."
         required: false

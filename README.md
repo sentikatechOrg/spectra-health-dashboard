@@ -12,9 +12,9 @@ The site is a GitHub Pages SPA. There is no backend. Every historical run is a c
 
 Live site (after Pages is enabled):
 
-**https://aesstechnologies.github.io/spectra-health-dashboard/**
+**https://sentikatechorg.github.io/spectra-health-dashboard/**
 
-Org and repo slug are configurable in [`dashboard.config.json`](dashboard.config.json) so the same dashboard can live under `aesstechnologies` or `sentikatechOrg`.
+This repo lives in **sentikatechOrg** — the same GitHub org as the Sentika UI apps — so the PR-gate workflow can publish artifacts here without crossing organizations. Org and repo slug stay configurable in [`dashboard.config.json`](dashboard.config.json).
 
 ---
 
@@ -123,14 +123,14 @@ In the frontend repo, upload reports on pass **or** fail, then call the reusable
 
       - name: Publish run to health dashboard
         if: always()
-        uses: aesstechnologies/spectra-health-dashboard/.github/workflows/ingest.yml@main
+        uses: sentikatechOrg/spectra-health-dashboard/.github/workflows/ingest.yml@main
         with:
           report_artifact_name: spectra-reports-pr-${{ github.event.pull_request.number || github.run_number }}
         secrets:
           DASHBOARD_TOKEN: ${{ secrets.SPECTRA_DASHBOARD_TOKEN }}
 ```
 
-Change `aesstechnologies/spectra-health-dashboard` if you forked this repo into `sentikatechOrg` (or another org). Also update `org`, `repo`, and `pagesBase` in `dashboard.config.json`.
+If this dashboard is forked to another org, change the `uses:` path and update `org`, `repo`, and `pagesBase` in `dashboard.config.json`.
 
 ### 3. Allow the reusable workflow
 
@@ -143,7 +143,7 @@ The ingest job writes `data/runs/{id}.json`, updates `data/manifest.json`, and c
 From any system that already has the JSON:
 
 ```bash
-gh api repos/aesstechnologies/spectra-health-dashboard/dispatches \
+gh api repos/sentikatechOrg/spectra-health-dashboard/dispatches \
   -f event_type=spectra-ingest \
   -f client_payload='{"report_artifact_name":"spectra-reports-pr-3","source_repo":"sentikatechOrg/sentikatech-frontend","source_run_id":"32528125817","pr":"3"}'
 ```
