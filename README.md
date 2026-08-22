@@ -79,6 +79,7 @@ Produced from a Spectra CLI report (`spectra-report-*.json`). Extra CI fields ar
   "pr": 3,
   "branch": "feat/spectra-pr-gate",
   "commit": "abc1234",
+  "commit_owner": "carlosluna-sentika",
   "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32528125817",
   "cases_passed": 1,
   "cases_failed": 0,

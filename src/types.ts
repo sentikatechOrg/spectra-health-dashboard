@@ -44,6 +44,7 @@ export interface ManifestRun {
   pr?: number | null;
   branch?: string;
   commit?: string;
+  commit_owner?: string;
   github_run_url?: string;
   cases_passed: number;
   cases_failed: number;

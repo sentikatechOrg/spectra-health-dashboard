@@ -103,6 +103,7 @@ jobs:
           RUN_ID: ${{ inputs.source_run_id || github.event.client_payload.source_run_id || github.run_id }}
           PR: ${{ inputs.pr || github.event.client_payload.pr || github.event.pull_request.number }}
           BRANCH: ${{ inputs.branch || github.event.client_payload.branch || github.head_ref || github.ref_name }}
+          OWNER: ${{ github.event.pull_request.user.login || github.event.client_payload.owner || github.actor }}
           WORKFLOW_URL: ${{ github.event.client_payload.workflow_url }}
         run: |
           if [ -z "$WORKFLOW_URL" ]; then
@@ -115,6 +116,7 @@ jobs:
             --run-id "$RUN_ID" \
             --pr "$PR" \
             --branch "$BRANCH" \
+            --owner "$OWNER" \
             --workflow-url "$WORKFLOW_URL"
 
       - name: Commit ingested run

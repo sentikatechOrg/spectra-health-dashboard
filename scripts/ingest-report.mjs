@@ -29,6 +29,7 @@ const run = normalizeReport(report, {
   pr: args.pr,
   branch: args.branch,
   commit: args.commit,
+  owner: args.owner,
   github_run_url: args["workflow-url"] || args.workflow_url,
   html_report: args["html-report"] || args.html_report,
   id: args.id,

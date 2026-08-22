@@ -77,6 +77,7 @@ export function RunDetailPage() {
       <p className="page-lead">
         {formatDate(run.started_at)} · {run.branch || "unknown branch"}
         {run.pr ? ` · PR #${run.pr}` : ""} · {run.commit || "no commit"}
+        {run.commit_owner ? ` · ${run.commit_owner}` : ""}
       </p>
 
       <section className="kpis">
