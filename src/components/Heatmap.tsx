@@ -44,7 +44,7 @@ function statusLabel(health?: "good" | "bad" | "mixed"): string {
   return "No run";
 }
 
-export function Heatmap({ runs }: { runs: ManifestRun[] }) {
+export function Heatmap({ runs, compact }: { runs: ManifestRun[]; compact?: boolean }) {
   const health = dayHealth(runs);
   const counts = new Map<string, number>();
   for (const run of runs) {
@@ -54,7 +54,7 @@ export function Heatmap({ runs }: { runs: ManifestRun[] }) {
 
   return (
     <>
-      <div className="calendars">
+      <div className={`calendars ${compact ? "compact" : ""}`}>
         {monthsToShow(runs).map(({ year, month }) => {
           const title = new Date(year, month, 1).toLocaleString(undefined, { month: "long", year: "numeric" });
           return (
@@ -78,7 +78,7 @@ export function Heatmap({ runs }: { runs: ManifestRun[] }) {
                       title={`${key}: ${statusLabel(tone)}${count ? ` · ${count} run${count === 1 ? "" : "s"}` : ""}`}
                     >
                       <span className="cal-num">{day}</span>
-                      <span className="cal-status">{tone ? statusLabel(tone) : ""}</span>
+                      {!compact && <span className="cal-status">{tone ? statusLabel(tone) : ""}</span>}
                     </div>
                   );
                 })}

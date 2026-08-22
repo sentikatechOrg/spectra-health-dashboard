@@ -8,16 +8,11 @@ import { RunDetailPage } from "./pages/RunDetail";
 
 export function App() {
   return (
-    <div>
-      <header className="app-header">
-        <div className="header-row">
-          <div className="brand">
-            <div className="brand-mark">S</div>
-            <div>
-              <h1>{cfg.title}</h1>
-              <p>{cfg.subtitle}</p>
-            </div>
-          </div>
+    <div className="app-shell">
+      <header className="app-header compact">
+        <div className="brand">
+          <div className="brand-mark">S</div>
+          <h1>{cfg.title}</h1>
         </div>
         <nav className="nav">
           <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : undefined)}>
@@ -34,13 +29,15 @@ export function App() {
           </NavLink>
         </nav>
       </header>
-      <Routes>
-        <Route path="/" element={<OverviewPage />} />
-        <Route path="/repos" element={<ReposPage />} />
-        <Route path="/failures" element={<FailuresPage />} />
-        <Route path="/maintain" element={<MaintainPage />} />
-        <Route path="/run/:id" element={<RunDetailPage />} />
-      </Routes>
+      <div className="app-main">
+        <Routes>
+          <Route path="/" element={<OverviewPage />} />
+          <Route path="/repos" element={<ReposPage />} />
+          <Route path="/failures" element={<FailuresPage />} />
+          <Route path="/maintain" element={<MaintainPage />} />
+          <Route path="/run/:id" element={<RunDetailPage />} />
+        </Routes>
+      </div>
     </div>
   );
 }
