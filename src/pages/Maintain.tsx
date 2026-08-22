@@ -34,8 +34,8 @@ export function MaintainPage() {
           <li className="step">
             <span className="pill">2</span>
             <div>
-              Click <strong>Run workflow</strong>. Choose <code>purge-seed</code> for sample data, or{" "}
-              <code>remove-ids</code> and paste ids from the table below.
+              Click <strong>Run workflow</strong>. Use <code>remove-ids</code> and paste ids from the table.
+              <code>purge-seed</code> only deletes leftover demo rows from when the repo was first created — you do not need it for real CI runs.
             </div>
           </li>
         </ol>
@@ -47,7 +47,7 @@ export function MaintainPage() {
 
       <article className="card">
         <h3>All stored runs</h3>
-        <p className="sub">Copy an id to remove one run. Sample rows are tagged Seed.</p>
+        <p className="sub">Copy an id to remove one real run. Demo leftovers would be tagged Sample.</p>
         <div className="table-wrap">
           <table>
             <thead>
@@ -67,7 +67,7 @@ export function MaintainPage() {
                   </td>
                   <td>{repoName(run.repo)} · {run.suite}</td>
                   <td><span className={`pill ${run.status}`}>{statusLabel(run.status)}</span></td>
-                  <td>{run.seed ? <span className="pill watch">Seed</span> : <span className="pill good">CI</span>}</td>
+                  <td>{run.seed ? <span className="pill watch">Sample</span> : <span className="pill good">Real CI</span>}</td>
                   <td><code>{run.id}</code></td>
                 </tr>
               ))}

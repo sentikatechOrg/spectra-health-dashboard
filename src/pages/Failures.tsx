@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { RangeToggle } from "../components/RangeToggle";
-import { SeedToggle } from "../components/SeedToggle";
 import { formatDate, repoName } from "../lib/format";
 import { loadRun } from "../lib/load";
 import { useRuns } from "../lib/runs";
@@ -22,7 +21,7 @@ function normalizeMessage(message: string): string {
 }
 
 export function FailuresPage() {
-  const { visible: live, includeSeed, setIncludeSeed, seedCount } = useRuns();
+  const { visible: live } = useRuns();
   const [details, setDetails] = useState<NormalizedRun[]>([]);
   const [range, setRange] = useState<RangeKey>("90");
 
@@ -68,12 +67,7 @@ export function FailuresPage() {
           <h2 className="page-title">Failures</h2>
           <p className="page-lead">Repeated problems, grouped by the message testers would recognize.</p>
         </div>
-        <div>
-          <RangeToggle value={range} onChange={setRange} />
-          <div style={{ marginTop: 8, textAlign: "right" }}>
-            <SeedToggle seedCount={seedCount} includeSeed={includeSeed} onChange={setIncludeSeed} />
-          </div>
-        </div>
+        <RangeToggle value={range} onChange={setRange} />
       </div>
       {!groups.length && <p className="empty">No failures in this period.</p>}
       {groups.map((group) => (

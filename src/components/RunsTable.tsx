@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { formatDate, formatDuration, repoName, statusLabel } from "../lib/format";
 import type { ManifestRun } from "../types";
 
-export function RunsTable({ runs }: { runs: ManifestRun[] }) {
+export function RunsTable({ runs, limit }: { runs: ManifestRun[]; limit?: number }) {
+  const rows = limit ? runs.slice(0, limit) : runs;
   if (!runs.length) return <p className="empty">No runs in this period.</p>;
   return (
     <div className="table-wrap">
@@ -20,7 +21,7 @@ export function RunsTable({ runs }: { runs: ManifestRun[] }) {
           </tr>
         </thead>
         <tbody>
-          {runs.map((run) => (
+          {rows.map((run) => (
             <tr key={run.id} className="clickable">
               <td>
                 <Link className="linkish" to={`/run/${run.id}`}>{formatDate(run.started_at)}</Link>

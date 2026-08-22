@@ -2,7 +2,7 @@ import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 
 const COLORS = { passed: "#1b8a5a", failed: "#c9372c", skipped: "#6b778c" };
 
-export function StatusDonut({ passed, failed, skipped }: { passed: number; failed: number; skipped: number }) {
+export function StatusDonut({ passed, failed, skipped, fill }: { passed: number; failed: number; skipped: number; fill?: boolean }) {
   const data = [
     { name: "Passed", value: passed, key: "passed" as const },
     { name: "Failed", value: failed, key: "failed" as const },
@@ -14,9 +14,9 @@ export function StatusDonut({ passed, failed, skipped }: { passed: number; faile
   }
 
   return (
-    <ResponsiveContainer width="100%" height={220}>
+    <ResponsiveContainer width="100%" height={fill ? "100%" : 220}>
       <PieChart>
-        <Pie data={data} dataKey="value" nameKey="name" innerRadius={58} outerRadius={86} paddingAngle={2}>
+        <Pie data={data} dataKey="value" nameKey="name" innerRadius={fill ? 40 : 58} outerRadius={fill ? 62 : 86} paddingAngle={2}>
           {data.map((row) => (
             <Cell key={row.key} fill={COLORS[row.key]} />
           ))}

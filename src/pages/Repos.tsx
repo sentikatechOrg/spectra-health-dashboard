@@ -3,14 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Line, LineChart, ResponsiveContainer } from "recharts";
 import { cfg } from "../config";
 import { RangeToggle } from "../components/RangeToggle";
-import { SeedToggle } from "../components/SeedToggle";
 import { formatDate, formatDuration, formatPct, healthWord, repoName } from "../lib/format";
 import { useRuns } from "../lib/runs";
 import { filterByRange, groupByRepo } from "../lib/stats";
 import type { ManifestRun, RangeKey } from "../types";
 
 export function ReposPage() {
-  const { visible: live, includeSeed, setIncludeSeed, seedCount } = useRuns();
+  const { visible: live } = useRuns();
   const [range, setRange] = useState<RangeKey>("90");
   const navigate = useNavigate();
 
@@ -39,12 +38,7 @@ export function ReposPage() {
           <h2 className="page-title">Apps</h2>
           <p className="page-lead">One card per connected frontend. Green is healthy, amber is flaky, red is failing.</p>
         </div>
-        <div>
-          <RangeToggle value={range} onChange={setRange} />
-          <div style={{ marginTop: 8, textAlign: "right" }}>
-            <SeedToggle seedCount={seedCount} includeSeed={includeSeed} onChange={setIncludeSeed} />
-          </div>
-        </div>
+        <RangeToggle value={range} onChange={setRange} />
       </div>
       <section className="repo-grid">
         {groups.map((group) => {

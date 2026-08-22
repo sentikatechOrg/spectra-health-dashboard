@@ -1,10 +1,10 @@
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { formatDay } from "../lib/format";
 
-export function PassRateTrend({ data }: { data: { day: string; passRate: number }[] }) {
+export function PassRateTrend({ data, fill }: { data: { day: string; passRate: number }[]; fill?: boolean }) {
   if (!data.length) return <p className="empty">Not enough history yet.</p>;
   return (
-    <ResponsiveContainer width="100%" height={220}>
+    <ResponsiveContainer width="100%" height={fill ? "100%" : 220}>
       <AreaChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
         <CartesianGrid stroke="#ebecf0" vertical={false} />
         <XAxis dataKey="day" tickFormatter={(value) => formatDay(value)} tick={{ fontSize: 11 }} />
@@ -16,10 +16,10 @@ export function PassRateTrend({ data }: { data: { day: string; passRate: number 
   );
 }
 
-export function DurationTrend({ data }: { data: { day: string; durationMin: number }[] }) {
+export function DurationTrend({ data, fill }: { data: { day: string; durationMin: number }[]; fill?: boolean }) {
   if (!data.length) return <p className="empty">Not enough history yet.</p>;
   return (
-    <ResponsiveContainer width="100%" height={220}>
+    <ResponsiveContainer width="100%" height={fill ? "100%" : 220}>
       <AreaChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
         <CartesianGrid stroke="#ebecf0" vertical={false} />
         <XAxis dataKey="day" tickFormatter={(value) => formatDay(value)} tick={{ fontSize: 11 }} />
