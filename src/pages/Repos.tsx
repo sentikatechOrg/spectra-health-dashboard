@@ -56,7 +56,7 @@ export function ReposPage() {
                 </div>
                 <span className={`pill ${health.tone}`}>{health.label}</span>
               </header>
-              <div className="kpi" style={{ boxShadow: "none", padding: 0, border: 0 }}>
+              <div className="repo-stat">
                 <div className="label">Pass rate</div>
                 <div className="value">{group.stats.runCount ? formatPct(group.stats.passRate) : "—"}</div>
                 <div className="hint">

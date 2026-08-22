@@ -29,6 +29,8 @@ This repo lives in **sentikatechOrg** — the same GitHub org as the Sentika UI 
 
 Language is plain English. Colors are green / amber / red. No raw YAML.
 
+**How to run and use the app:** [docs/OPERATORS_MANUAL.md](docs/OPERATORS_MANUAL.md).
+
 ---
 
 ## Local development
