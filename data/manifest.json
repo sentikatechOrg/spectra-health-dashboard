@@ -1,7 +1,27 @@
 {
-  "generated_at": "2026-08-22T11:43:36.945Z",
+  "generated_at": "2026-08-22T20:07:55.418Z",
   "cap": 500,
   "runs": [
+    {
+      "id": "sentikatechOrg-sentikatech-frontend-32595490697-alarm",
+      "repo": "sentikatechOrg/sentikatech-frontend",
+      "org": "sentikatechOrg",
+      "suite": "alarm",
+      "status": "passed",
+      "pass_rate": 1,
+      "started_at": "2026-08-22T20:03:04.296Z",
+      "finished_at": "2026-08-22T20:07:33.596Z",
+      "duration_ms": 269300,
+      "pr": 4,
+      "branch": "feat/spectra-pr-gate",
+      "commit": "af14e87",
+      "commit_owner": "carlosluna-sentika",
+      "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32595490697",
+      "cases_passed": 1,
+      "cases_failed": 0,
+      "cases_skipped": 0,
+      "cases_total": 1
+    },
     {
       "id": "sentikatechOrg-sentikatech-frontend-32569961336-alarm",
       "repo": "sentikatechOrg/sentikatech-frontend",
