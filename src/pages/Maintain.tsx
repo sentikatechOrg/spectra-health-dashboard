@@ -14,12 +14,12 @@ export function MaintainPage() {
     <main className="page">
       <h2 className="page-title">Maintain</h2>
       <p className="page-lead">
-        This site is static. Deleting a run has to be a commit on GitHub, not a button in the browser.
-        Anyone with write access on <strong>{cfg.org}/{cfg.repo}</strong> can do it — no separate admin login.
+        This site is static. Deleting a run is a GitHub commit, not a button in the browser.
+        Anyone with write access on <strong>{cfg.org}/{cfg.repo}</strong> can do it.
       </p>
 
       <article className="card" style={{ marginBottom: 16 }}>
-        <h3>Remove runs</h3>
+        <h3>Remove a run</h3>
         <p className="sub">Opens the maintainer workflow. Pages rebuilds after it commits.</p>
         <ol className="steps" style={{ paddingTop: 4 }}>
           <li className="step">
@@ -34,20 +34,18 @@ export function MaintainPage() {
           <li className="step">
             <span className="pill">2</span>
             <div>
-              Click <strong>Run workflow</strong>. Use <code>remove-ids</code> and paste ids from the table.
-              <code>purge-seed</code> only deletes leftover demo rows from when the repo was first created — you do not need it for real CI runs.
+              Click <strong>Run workflow</strong> and paste one or more run ids from the table.
             </div>
           </li>
         </ol>
         <p className="muted">
-          Local equivalent: <code>node scripts/remove-runs.mjs --seed</code> or{" "}
-          <code>node scripts/remove-runs.mjs --ids id1,id2</code>
+          Locally: <code>node scripts/remove-runs.mjs --ids id1,id2</code>
         </p>
       </article>
 
       <article className="card">
         <h3>All stored runs</h3>
-        <p className="sub">Copy an id to remove one real run. Demo leftovers would be tagged Sample.</p>
+        <p className="sub">Copy an id to remove that CI run from the dashboard.</p>
         <div className="table-wrap">
           <table>
             <thead>
@@ -55,7 +53,6 @@ export function MaintainPage() {
                 <th>When</th>
                 <th>App / suite</th>
                 <th>Result</th>
-                <th>Source</th>
                 <th>Id</th>
               </tr>
             </thead>
@@ -67,7 +64,6 @@ export function MaintainPage() {
                   </td>
                   <td>{repoName(run.repo)} · {run.suite}</td>
                   <td><span className={`pill ${run.status}`}>{statusLabel(run.status)}</span></td>
-                  <td>{run.seed ? <span className="pill watch">Sample</span> : <span className="pill good">Real CI</span>}</td>
                   <td><code>{run.id}</code></td>
                 </tr>
               ))}
