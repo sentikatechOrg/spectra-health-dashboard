@@ -29,6 +29,8 @@ Time filters (30 days / 90 days / all history) apply to Overview, Apps, and Fail
 
 The latest-runs table scrolls inside its card if the list gets long. That is expected.
 
+**Owner** is the PR author (or the GitHub user who triggered the run). Older rows ingested before this field existed show a dash; new CI publishes fill it in.
+
 ---
 
 ## 2. Run it on your machine

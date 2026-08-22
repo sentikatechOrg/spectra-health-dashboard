@@ -15,6 +15,7 @@ export function RunsTable({ runs, limit }: { runs: ManifestRun[]; limit?: number
             <th>Suite</th>
             <th>Branch / PR</th>
             <th>Commit</th>
+            <th>Owner</th>
             <th>Result</th>
             <th>Duration</th>
             <th>Report</th>
@@ -33,6 +34,7 @@ export function RunsTable({ runs, limit }: { runs: ManifestRun[]; limit?: number
                 {run.pr ? ` · PR #${run.pr}` : ""}
               </td>
               <td><code>{run.commit || "—"}</code></td>
+              <td>{run.commit_owner || "—"}</td>
               <td>
                 <span className={`pill ${run.status}`}>
                   <span className="dot" />
