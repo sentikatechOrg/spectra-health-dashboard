@@ -187,15 +187,32 @@ button, select { font: inherit; }
 .kpis.compact .kpi .value { font-size: 1.35rem; margin: 2px 0 0; }
 .kpis.compact .kpi .hint { font-size: 0.72rem; }
 .kpi {
+  --accent: var(--navy);
+  position: relative;
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 16px 18px 14px;
-  border-left: 4px solid var(--navy);
+  padding: 16px 18px 14px 20px;
+  overflow: hidden;
 }
-.kpi.good { border-left-color: var(--good); }
-.kpi.watch { border-left-color: var(--watch); }
-.kpi.bad { border-left-color: var(--bad); }
+.kpi::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--accent) 32%,
+    var(--accent) 68%,
+    transparent 100%
+  );
+}
+.kpi.good { --accent: var(--good); }
+.kpi.watch { --accent: var(--watch); }
+.kpi.bad { --accent: var(--bad); }
 .kpi .label { color: var(--muted); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .kpi .value { font-size: 1.85rem; font-weight: 700; line-height: 1.15; margin: 6px 0 2px; }
 .kpi .hint { color: var(--muted); font-size: 0.8rem; }
@@ -219,8 +236,13 @@ button, select { font: inherit; }
 .board {
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(280px, 1.15fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(240px, 0.85fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   gap: 8px;
+}
+.board .cal-card {
+  grid-column: 3;
+  grid-row: 1 / span 2;
 }
 .chart-card, .cal-card, .table-card { min-height: 0; display: flex; flex-direction: column; }
 .chart-fill { flex: 1; min-height: 0; }
@@ -401,7 +423,14 @@ tr.clickable:hover { background: #f6f8fb; }
     overflow: visible;
     grid-template-rows: auto;
   }
-  .board { grid-template-columns: 1fr 1fr; }
+  .board {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .board .cal-card {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
   .chart-fill { min-height: 180px; }
 }
 @media (max-width: 900px) {

@@ -2,9 +2,7 @@
 /**
  * Remove run records from data/ (maintainers only).
  *
- *   node scripts/remove-runs.mjs --seed
  *   node scripts/remove-runs.mjs --ids id1,id2
- *   node scripts/remove-runs.mjs --mark-seed --ids id1,id2
  */
 import { mkdir, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -18,54 +16,20 @@ const manifestPath = path.join(dataDir, "manifest.json");
 const runsDir = path.join(dataDir, "runs");
 const archiveDir = path.join(dataDir, "archive", "runs");
 
-const manifest = await readJson(manifestPath);
-const runs = Array.isArray(manifest.runs) ? manifest.runs : [];
 const idList = String(args.ids || "")
   .split(",")
   .map((id) => id.trim())
   .filter(Boolean);
 
-function isTarget(run) {
-  if (args.seed) return Boolean(run.seed);
-  if (idList.length) return idList.includes(run.id);
-  return false;
-}
-
-if (!args.seed && !idList.length) {
-  console.error("Usage: node scripts/remove-runs.mjs --seed | --ids id1,id2 [--mark-seed]");
+if (!idList.length) {
+  console.error("Usage: node scripts/remove-runs.mjs --ids id1,id2");
   process.exit(1);
 }
 
-if (args["mark-seed"]) {
-  if (!idList.length) {
-    console.error("--mark-seed requires --ids");
-    process.exit(1);
-  }
-  for (const run of runs) {
-    if (idList.includes(run.id)) run.seed = true;
-  }
-  for (const id of idList) {
-    const file = path.join(runsDir, `${id}.json`);
-    try {
-      const full = await readJson(file);
-      full.seed = true;
-      await writeFile(file, `${JSON.stringify(full, null, 2)}\n`);
-    } catch {
-      console.warn(`No run file for ${id}`);
-    }
-  }
-  manifest.generated_at = new Date().toISOString();
-  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
-  console.log(`Marked ${idList.length} run(s) as seed`);
-  process.exit(0);
-}
-
-const keep = [];
-const removed = [];
-for (const run of runs) {
-  if (isTarget(run)) removed.push(run);
-  else keep.push(run);
-}
+const manifest = await readJson(manifestPath);
+const runs = Array.isArray(manifest.runs) ? manifest.runs : [];
+const keep = runs.filter((run) => !idList.includes(run.id));
+const removed = runs.filter((run) => idList.includes(run.id));
 
 if (!removed.length) {
   console.log("No matching runs");

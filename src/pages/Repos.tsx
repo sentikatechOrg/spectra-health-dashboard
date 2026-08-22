@@ -9,7 +9,7 @@ import { filterByRange, groupByRepo } from "../lib/stats";
 import type { ManifestRun, RangeKey } from "../types";
 
 export function ReposPage() {
-  const { visible: live } = useRuns();
+  const { runs: live } = useRuns();
   const [range, setRange] = useState<RangeKey>("90");
   const navigate = useNavigate();
 

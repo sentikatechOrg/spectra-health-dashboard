@@ -11,7 +11,7 @@ import { failuresBySuite, filterByRange, openFailures, totals, trendPoints, verd
 import type { RangeKey } from "../types";
 
 export function OverviewPage() {
-  const { visible: live, error } = useRuns();
+  const { runs: live, error } = useRuns();
   const [range, setRange] = useState<RangeKey>("30");
 
   const visible = useMemo(() => filterByRange(live, range), [live, range]);

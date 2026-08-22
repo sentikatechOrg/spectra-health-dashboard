@@ -3,16 +3,9 @@ name: Maintain dashboard
 on:
   workflow_dispatch:
     inputs:
-      mode:
-        description: What to remove
-        required: true
-        type: choice
-        options:
-          - purge-seed
-          - remove-ids
       run_ids:
-        description: "Comma-separated run ids (only for remove-ids)"
-        required: false
+        description: "Comma-separated run ids to remove"
+        required: true
         type: string
 
 permissions:
@@ -31,16 +24,7 @@ jobs:
           node-version: "20"
 
       - name: Remove runs
-        run: |
-          if [ "${{ inputs.mode }}" = "purge-seed" ]; then
-            node scripts/remove-runs.mjs --seed
-          else
-            if [ -z "${{ inputs.run_ids }}" ]; then
-              echo "run_ids is required for remove-ids"
-              exit 1
-            fi
-            node scripts/remove-runs.mjs --ids "${{ inputs.run_ids }}"
-          fi
+        run: node scripts/remove-runs.mjs --ids "${{ inputs.run_ids }}"
 
       - name: Commit
         run: |
@@ -51,5 +35,5 @@ jobs:
             echo "No data changes"
             exit 0
           fi
-          git commit -m "maintain: ${{ inputs.mode }}"
+          git commit -m "maintain: remove ${{ inputs.run_ids }}"
           git push

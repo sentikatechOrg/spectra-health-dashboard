@@ -124,7 +124,6 @@ export function normalizeReport(report, extras = {}) {
     cases_total: total,
     cases,
     failed_steps: failedStepsFromCases(cases),
-    seed: extras.seed === true || extras.seed === "true" || extras.seed === "1" ? true : undefined,
   };
 }
 
@@ -147,6 +146,5 @@ export function toManifestRow(run) {
     cases_failed: run.cases_failed,
     cases_skipped: run.cases_skipped ?? 0,
     cases_total: run.cases_total,
-    ...(run.seed ? { seed: true } : {}),
   };
 }
