@@ -1,0 +1,55 @@
+name: Maintain dashboard
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to remove
+        required: true
+        type: choice
+        options:
+          - purge-seed
+          - remove-ids
+      run_ids:
+        description: "Comma-separated run ids (only for remove-ids)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Remove runs
+        run: |
+          if [ "${{ inputs.mode }}" = "purge-seed" ]; then
+            node scripts/remove-runs.mjs --seed
+          else
+            if [ -z "${{ inputs.run_ids }}" ]; then
+              echo "run_ids is required for remove-ids"
+              exit 1
+            fi
+            node scripts/remove-runs.mjs --ids "${{ inputs.run_ids }}"
+          fi
+
+      - name: Commit
+        run: |
+          git config user.name "spectra-health-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --staged --quiet; then
+            echo "No data changes"
+            exit 0
+          fi
+          git commit -m "maintain: ${{ inputs.mode }}"
+          git push

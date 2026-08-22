@@ -1,23 +1,20 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Line, LineChart, ResponsiveContainer } from "recharts";
 import { cfg } from "../config";
 import { RangeToggle } from "../components/RangeToggle";
+import { SeedToggle } from "../components/SeedToggle";
 import { formatDate, formatDuration, formatPct, healthWord, repoName } from "../lib/format";
-import { loadManifest } from "../lib/load";
+import { useRuns } from "../lib/runs";
 import { filterByRange, groupByRepo } from "../lib/stats";
 import type { ManifestRun, RangeKey } from "../types";
 
 export function ReposPage() {
-  const [runs, setRuns] = useState<ManifestRun[]>([]);
+  const { visible: live, includeSeed, setIncludeSeed, seedCount } = useRuns();
   const [range, setRange] = useState<RangeKey>("90");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    loadManifest().then((manifest) => setRuns(manifest.runs || [])).catch(() => setRuns([]));
-  }, []);
-
-  const visible = useMemo(() => filterByRange(runs, range), [runs, range]);
+  const visible = useMemo(() => filterByRange(live, range), [live, range]);
   const groups = useMemo(() => {
     const live = groupByRepo(visible);
     const known = new Set(live.map((group) => group.repo));
@@ -42,7 +39,12 @@ export function ReposPage() {
           <h2 className="page-title">Apps</h2>
           <p className="page-lead">One card per connected frontend. Green is healthy, amber is flaky, red is failing.</p>
         </div>
-        <RangeToggle value={range} onChange={setRange} />
+        <div>
+          <RangeToggle value={range} onChange={setRange} />
+          <div style={{ marginTop: 8, textAlign: "right" }}>
+            <SeedToggle seedCount={seedCount} includeSeed={includeSeed} onChange={setIncludeSeed} />
+          </div>
+        </div>
       </div>
       <section className="repo-grid">
         {groups.map((group) => {

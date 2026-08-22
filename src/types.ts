@@ -49,6 +49,8 @@ export interface ManifestRun {
   cases_failed: number;
   cases_skipped?: number;
   cases_total?: number;
+  /** True for repo-init samples. Hidden on the public dashboard unless shown. */
+  seed?: boolean;
 }
 
 export interface Manifest {
