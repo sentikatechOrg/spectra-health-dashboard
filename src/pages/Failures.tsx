@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { RangeToggle } from "../components/RangeToggle";
+import { SeedToggle } from "../components/SeedToggle";
 import { formatDate, repoName } from "../lib/format";
-import { loadManifest, loadRun } from "../lib/load";
+import { loadRun } from "../lib/load";
+import { useRuns } from "../lib/runs";
 import { filterByRange } from "../lib/stats";
-import type { FailedStep, ManifestRun, NormalizedRun, RangeKey } from "../types";
+import type { FailedStep, NormalizedRun, RangeKey } from "../types";
 
 interface GroupedFailure {
   key: string;
@@ -20,23 +22,18 @@ function normalizeMessage(message: string): string {
 }
 
 export function FailuresPage() {
-  const [runs, setRuns] = useState<ManifestRun[]>([]);
+  const { visible: live, includeSeed, setIncludeSeed, seedCount } = useRuns();
   const [details, setDetails] = useState<NormalizedRun[]>([]);
   const [range, setRange] = useState<RangeKey>("90");
 
   useEffect(() => {
-    loadManifest()
-      .then(async (manifest) => {
-        const list = manifest.runs || [];
-        setRuns(list);
-        const failed = list.filter((run) => run.status === "failed" || (run.cases_failed || 0) > 0);
-        const loaded = await Promise.all(failed.map((run) => loadRun(run.id).catch(() => null)));
-        setDetails(loaded.filter((run): run is NormalizedRun => Boolean(run)));
-      })
-      .catch(() => setRuns([]));
-  }, []);
+    const failed = live.filter((run) => run.status === "failed" || (run.cases_failed || 0) > 0);
+    Promise.all(failed.map((run) => loadRun(run.id).catch(() => null))).then((loaded) => {
+      setDetails(loaded.filter((run): run is NormalizedRun => Boolean(run)));
+    });
+  }, [live]);
 
-  const visibleIds = useMemo(() => new Set(filterByRange(runs, range).map((run) => run.id)), [runs, range]);
+  const visibleIds = useMemo(() => new Set(filterByRange(live, range).map((run) => run.id)), [live, range]);
   const groups = useMemo(() => {
     const map = new Map<string, GroupedFailure>();
     for (const run of details) {
@@ -71,7 +68,12 @@ export function FailuresPage() {
           <h2 className="page-title">Failures</h2>
           <p className="page-lead">Repeated problems, grouped by the message testers would recognize.</p>
         </div>
-        <RangeToggle value={range} onChange={setRange} />
+        <div>
+          <RangeToggle value={range} onChange={setRange} />
+          <div style={{ marginTop: 8, textAlign: "right" }}>
+            <SeedToggle seedCount={seedCount} includeSeed={includeSeed} onChange={setIncludeSeed} />
+          </div>
+        </div>
       </div>
       {!groups.length && <p className="empty">No failures in this period.</p>}
       {groups.map((group) => (

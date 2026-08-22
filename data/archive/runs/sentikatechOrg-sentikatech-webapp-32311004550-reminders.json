@@ -41,9 +41,27 @@
       "status": "passed",
       "duration_ms": 18440,
       "steps": [
-        { "stepIndex": 0, "type": "ui.wait", "description": "Home page ready", "status": "passed", "duration_ms": 2200 },
-        { "stepIndex": 1, "type": "ui.click", "description": "Open Reminders", "status": "passed", "duration_ms": 340 },
-        { "stepIndex": 2, "type": "ui.wait", "description": "Reminders list visible", "status": "passed", "duration_ms": 890 }
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "description": "Home page ready",
+          "status": "passed",
+          "duration_ms": 2200
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.click",
+          "description": "Open Reminders",
+          "status": "passed",
+          "duration_ms": 340
+        },
+        {
+          "stepIndex": 2,
+          "type": "ui.wait",
+          "description": "Reminders list visible",
+          "status": "passed",
+          "duration_ms": 890
+        }
       ]
     },
     {
@@ -53,9 +71,27 @@
       "duration_ms": 41220,
       "error": "Locator not found: role=button[name=\"Save reminder\"]",
       "steps": [
-        { "stepIndex": 0, "type": "ui.click", "description": "Add reminder", "status": "passed", "duration_ms": 280 },
-        { "stepIndex": 1, "type": "ui.fill", "description": "Enter medicine name", "status": "passed", "duration_ms": 410 },
-        { "stepIndex": 2, "type": "ui.click", "description": "Pick time", "status": "passed", "duration_ms": 360 },
+        {
+          "stepIndex": 0,
+          "type": "ui.click",
+          "description": "Add reminder",
+          "status": "passed",
+          "duration_ms": 280
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.fill",
+          "description": "Enter medicine name",
+          "status": "passed",
+          "duration_ms": 410
+        },
+        {
+          "stepIndex": 2,
+          "type": "ui.click",
+          "description": "Pick time",
+          "status": "passed",
+          "duration_ms": 360
+        },
         {
           "stepIndex": 3,
           "type": "ui.click",
@@ -69,5 +105,6 @@
         }
       ]
     }
-  ]
+  ],
+  "seed": true
 }

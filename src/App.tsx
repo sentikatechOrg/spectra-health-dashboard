@@ -1,6 +1,7 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 import { cfg } from "./config";
 import { FailuresPage } from "./pages/Failures";
+import { MaintainPage } from "./pages/Maintain";
 import { OverviewPage } from "./pages/Overview";
 import { ReposPage } from "./pages/Repos";
 import { RunDetailPage } from "./pages/RunDetail";
@@ -28,12 +29,16 @@ export function App() {
           <NavLink to="/failures" className={({ isActive }) => (isActive ? "active" : undefined)}>
             Failures
           </NavLink>
+          <NavLink to="/maintain" className={({ isActive }) => (isActive ? "active" : undefined)}>
+            Maintain
+          </NavLink>
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<OverviewPage />} />
         <Route path="/repos" element={<ReposPage />} />
         <Route path="/failures" element={<FailuresPage />} />
+        <Route path="/maintain" element={<MaintainPage />} />
         <Route path="/run/:id" element={<RunDetailPage />} />
       </Routes>
     </div>

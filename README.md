@@ -163,6 +163,28 @@ The site is static. Screenshots are shown only if their path is stored on the ru
 
 ---
 
+## Maintainers: remove runs
+
+There is no login on the public site. Removing a row is a git commit, so anyone with **write access** on this repo is a maintainer.
+
+1. Open **Actions → Maintain dashboard** (or the **Maintain** page on the site, which links there).
+2. **Run workflow**:
+   - `purge-seed` — delete sample/fake rows tagged `seed: true`
+   - `remove-ids` — paste one or more run ids from the Maintain table
+3. The workflow archives files under `data/archive/runs/` and updates `data/manifest.json`. Pages redeploys.
+
+Locally:
+
+```bash
+node scripts/remove-runs.mjs --seed
+node scripts/remove-runs.mjs --ids sentikatechOrg-sentikatech-frontend-32532762335-alarm
+node scripts/remove-runs.mjs --mark-seed --ids id-one,id-two
+```
+
+Overview / Apps / Failures hide seed rows by default. Real CI ingest does not set `seed`.
+
+---
+
 ## Repository layout
 
 ```
@@ -176,9 +198,11 @@ spectra-health-dashboard/
 ├── scripts/
 │   ├── ingest-report.mjs
 │   ├── merge-manifest.mjs
-│   └── ci-ingest.mjs
+│   ├── ci-ingest.mjs
+│   └── remove-runs.mjs
 ├── src/                    # Vite + React + TypeScript UI (Recharts)
 └── .github/workflows/
     ├── deploy-pages.yml
-    └── ingest.yml
+    ├── ingest.yml
+    └── maintain.yml
 ```

@@ -1,0 +1,200 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-32499812001-alarm",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "alarm",
+  "status": "failed",
+  "pass_rate": 0,
+  "started_at": "2026-08-18T16:42:11.110Z",
+  "finished_at": "2026-08-18T16:46:18.880Z",
+  "duration_ms": 247770,
+  "pr": 3,
+  "branch": "feat/spectra-pr-gate",
+  "commit": "7b91c04",
+  "github_run_id": "32499812001",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32499812001",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32499812001",
+  "ingested_at": "2026-08-18T16:47:05.000Z",
+  "frontend_commit": "7b91c04",
+  "frontend_branch": "feat/spectra-pr-gate",
+  "spectra_version": "0.1.0",
+  "suite_file": "alarm.yaml",
+  "cases_passed": 0,
+  "cases_failed": 1,
+  "cases_skipped": 0,
+  "cases_total": 1,
+  "failed_steps": [
+    {
+      "case_id": "AL-001",
+      "case_name": "Set up an alarm",
+      "step": 19,
+      "type": "ui.wait",
+      "selector": "role=button[name=\"Snooze\"]",
+      "message": "Timeout 90000ms exceeded waiting for role=button[name=\"Snooze\"]. Alarm modal did not appear after the scheduled fire time.",
+      "screenshot": "artifacts/al-001-step-19-snooze-timeout.png"
+    }
+  ],
+  "cases": [
+    {
+      "id": "AL-001",
+      "name": "Set up an alarm",
+      "status": "failed",
+      "duration_ms": 241102,
+      "error": "Timeout 90000ms exceeded waiting for role=button[name=\"Snooze\"]",
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "api.mock",
+          "description": "Stub Sentika reminders REST API",
+          "status": "passed",
+          "duration_ms": 38
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.wait",
+          "description": "Starting point, Home Page",
+          "status": "passed",
+          "duration_ms": 2104
+        },
+        {
+          "stepIndex": 2,
+          "type": "ui.click",
+          "description": "Enter into the Alarm view",
+          "status": "passed",
+          "duration_ms": 290
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "description": "Confirm transition to Alarms view",
+          "status": "passed",
+          "duration_ms": 540
+        },
+        {
+          "stepIndex": 4,
+          "type": "screen.assert",
+          "description": "Assert GUI",
+          "status": "passed",
+          "duration_ms": 1760
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "description": "Setup new Alarm",
+          "status": "passed",
+          "duration_ms": 250
+        },
+        {
+          "stepIndex": 6,
+          "type": "set_time",
+          "description": "Alarm target = now + 2 minutes",
+          "status": "passed",
+          "duration_ms": 10
+        },
+        {
+          "stepIndex": 7,
+          "type": "ui.click",
+          "description": "Set hour from stored alarm time",
+          "status": "passed",
+          "duration_ms": 380
+        },
+        {
+          "stepIndex": 8,
+          "type": "ui.click",
+          "description": "Set minute from stored alarm time",
+          "status": "passed",
+          "duration_ms": 360
+        },
+        {
+          "stepIndex": 9,
+          "type": "ui.click",
+          "description": "Set am/pm from stored alarm time",
+          "status": "passed",
+          "duration_ms": 240
+        },
+        {
+          "stepIndex": 10,
+          "type": "ui.click",
+          "description": "Next",
+          "status": "passed",
+          "duration_ms": 210
+        },
+        {
+          "stepIndex": 11,
+          "type": "ui.click",
+          "description": "Select today's weekday",
+          "status": "passed",
+          "duration_ms": 190
+        },
+        {
+          "stepIndex": 12,
+          "type": "ui.click",
+          "description": "Enable repeat weekly toggle",
+          "status": "passed",
+          "duration_ms": 170
+        },
+        {
+          "stepIndex": 13,
+          "type": "ui.click",
+          "description": "Save alarm and return to list",
+          "status": "passed",
+          "duration_ms": 510
+        },
+        {
+          "stepIndex": 14,
+          "type": "wait",
+          "description": "Wait until 1 minute before alarm fires",
+          "status": "passed",
+          "duration_ms": 57500
+        },
+        {
+          "stepIndex": 15,
+          "type": "wait",
+          "description": "Wait until alarm time",
+          "status": "passed",
+          "duration_ms": 60200
+        },
+        {
+          "stepIndex": 16,
+          "type": "ui.wait",
+          "description": "Wait for alarm modal",
+          "status": "failed",
+          "duration_ms": 90012,
+          "message": "Timeout 90000ms exceeded waiting for role=button[name=\"Snooze\"]. Alarm modal did not appear after the scheduled fire time.",
+          "artifacts": {
+            "screenshot": "artifacts/al-001-step-19-snooze-timeout.png"
+          }
+        },
+        {
+          "stepIndex": 17,
+          "type": "ui.click",
+          "description": "Snooze",
+          "status": "skipped",
+          "duration_ms": 0
+        },
+        {
+          "stepIndex": 18,
+          "type": "screen.wait_change",
+          "description": "Wait for snooze reactivation",
+          "status": "skipped",
+          "duration_ms": 0
+        },
+        {
+          "stepIndex": 19,
+          "type": "ui.click",
+          "description": "Stop/dismiss the reactivated alarm",
+          "status": "skipped",
+          "duration_ms": 0
+        },
+        {
+          "stepIndex": 20,
+          "type": "wait",
+          "description": "Wait 90s after stop",
+          "status": "skipped",
+          "duration_ms": 0
+        }
+      ]
+    }
+  ],
+  "seed": true
+}

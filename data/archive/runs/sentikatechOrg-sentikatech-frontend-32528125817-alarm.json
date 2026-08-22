@@ -1,0 +1,186 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-32528125817-alarm",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "alarm",
+  "status": "passed",
+  "pass_rate": 1,
+  "started_at": "2026-08-21T21:09:04.962Z",
+  "finished_at": "2026-08-21T21:14:12.184Z",
+  "duration_ms": 307222,
+  "pr": 3,
+  "branch": "feat/spectra-pr-gate",
+  "commit": "a1c4e92",
+  "github_run_id": "32528125817",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32528125817",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32528125817",
+  "ingested_at": "2026-08-21T21:15:02.000Z",
+  "html_report": "",
+  "frontend_commit": "a1c4e92",
+  "frontend_branch": "feat/spectra-pr-gate",
+  "spectra_version": "0.1.0",
+  "suite_file": "alarm.yaml",
+  "cases_passed": 1,
+  "cases_failed": 0,
+  "cases_skipped": 0,
+  "cases_total": 1,
+  "failed_steps": [],
+  "cases": [
+    {
+      "id": "AL-001",
+      "name": "Set up an alarm",
+      "status": "passed",
+      "duration_ms": 299436,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "api.mock",
+          "description": "Stub Sentika reminders REST API",
+          "status": "passed",
+          "duration_ms": 42
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.wait",
+          "description": "Starting point, Home Page",
+          "status": "passed",
+          "duration_ms": 1840
+        },
+        {
+          "stepIndex": 2,
+          "type": "ui.click",
+          "description": "Enter into the Alarm view",
+          "status": "passed",
+          "duration_ms": 310
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "description": "Confirm transition to Alarms view",
+          "status": "passed",
+          "duration_ms": 620
+        },
+        {
+          "stepIndex": 4,
+          "type": "screen.assert",
+          "description": "Assert GUI",
+          "status": "passed",
+          "duration_ms": 1880
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "description": "Setup new Alarm",
+          "status": "passed",
+          "duration_ms": 280
+        },
+        {
+          "stepIndex": 6,
+          "type": "set_time",
+          "description": "Alarm target = now + 2 minutes",
+          "status": "passed",
+          "duration_ms": 12
+        },
+        {
+          "stepIndex": 7,
+          "type": "ui.click",
+          "description": "Set hour from stored alarm time",
+          "status": "passed",
+          "duration_ms": 410
+        },
+        {
+          "stepIndex": 8,
+          "type": "ui.click",
+          "description": "Set minute from stored alarm time",
+          "status": "passed",
+          "duration_ms": 390
+        },
+        {
+          "stepIndex": 9,
+          "type": "ui.click",
+          "description": "Set am/pm from stored alarm time",
+          "status": "passed",
+          "duration_ms": 260
+        },
+        {
+          "stepIndex": 10,
+          "type": "ui.click",
+          "description": "Next",
+          "status": "passed",
+          "duration_ms": 240
+        },
+        {
+          "stepIndex": 11,
+          "type": "ui.click",
+          "description": "Select today's weekday",
+          "status": "passed",
+          "duration_ms": 210
+        },
+        {
+          "stepIndex": 12,
+          "type": "ui.click",
+          "description": "Enable repeat weekly toggle",
+          "status": "passed",
+          "duration_ms": 180
+        },
+        {
+          "stepIndex": 13,
+          "type": "ui.click",
+          "description": "Save alarm and return to list",
+          "status": "passed",
+          "duration_ms": 540
+        },
+        {
+          "stepIndex": 14,
+          "type": "wait",
+          "description": "Wait until 1 minute before alarm fires",
+          "status": "passed",
+          "duration_ms": 58000
+        },
+        {
+          "stepIndex": 15,
+          "type": "wait",
+          "description": "Wait until alarm time",
+          "status": "passed",
+          "duration_ms": 61000
+        },
+        {
+          "stepIndex": 16,
+          "type": "ui.wait",
+          "description": "Wait for alarm modal",
+          "status": "passed",
+          "duration_ms": 4200
+        },
+        {
+          "stepIndex": 17,
+          "type": "ui.click",
+          "description": "Snooze",
+          "status": "passed",
+          "duration_ms": 320
+        },
+        {
+          "stepIndex": 18,
+          "type": "screen.wait_change",
+          "description": "Wait for snooze reactivation",
+          "status": "passed",
+          "duration_ms": 64000
+        },
+        {
+          "stepIndex": 19,
+          "type": "ui.click",
+          "description": "Stop/dismiss the reactivated alarm",
+          "status": "passed",
+          "duration_ms": 280
+        },
+        {
+          "stepIndex": 20,
+          "type": "wait",
+          "description": "Wait 90s after stop",
+          "status": "passed",
+          "duration_ms": 90000
+        }
+      ]
+    }
+  ],
+  "seed": true
+}

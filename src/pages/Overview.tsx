@@ -1,27 +1,21 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { FailuresBar } from "../components/FailuresBar";
 import { Heatmap } from "../components/Heatmap";
 import { RangeToggle } from "../components/RangeToggle";
 import { RunsTable } from "../components/RunsTable";
+import { SeedToggle } from "../components/SeedToggle";
 import { StatusDonut } from "../components/StatusDonut";
 import { DurationTrend, PassRateTrend } from "../components/TrendCharts";
 import { formatDuration, formatPct } from "../lib/format";
-import { loadManifest } from "../lib/load";
+import { useRuns } from "../lib/runs";
 import { failuresBySuite, filterByRange, openFailures, totals, trendPoints, verdict } from "../lib/stats";
-import type { ManifestRun, RangeKey } from "../types";
+import type { RangeKey } from "../types";
 
 export function OverviewPage() {
-  const [runs, setRuns] = useState<ManifestRun[]>([]);
+  const { visible: live, includeSeed, setIncludeSeed, seedCount, error } = useRuns();
   const [range, setRange] = useState<RangeKey>("30");
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    loadManifest()
-      .then((manifest) => setRuns(manifest.runs || []))
-      .catch((err: Error) => setError(err.message));
-  }, []);
-
-  const visible = useMemo(() => filterByRange(runs, range), [runs, range]);
+  const visible = useMemo(() => filterByRange(live, range), [live, range]);
   const stats = useMemo(() => totals(visible), [visible]);
   const open = useMemo(() => openFailures(visible), [visible]);
   const trend = useMemo(() => trendPoints(visible), [visible]);
@@ -38,7 +32,12 @@ export function OverviewPage() {
           <h2 className="page-title">Overview</h2>
           <p className="page-lead">Pass rate, speed, and open problems across every connected frontend.</p>
         </div>
-        <RangeToggle value={range} onChange={setRange} />
+        <div>
+          <RangeToggle value={range} onChange={setRange} />
+          <div style={{ marginTop: 8, textAlign: "right" }}>
+            <SeedToggle seedCount={seedCount} includeSeed={includeSeed} onChange={setIncludeSeed} />
+          </div>
+        </div>
       </div>
 
       <section className={`verdict ${story.tone}`}>

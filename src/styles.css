@@ -107,6 +107,14 @@ button, select { font: inherit; }
   background: var(--navy);
   color: #fff;
 }
+.seed-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
 
 .verdict {
   display: flex;
