@@ -1,0 +1,537 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-32639956138-alarm",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "alarm",
+  "status": "passed",
+  "pass_rate": 1,
+  "started_at": "2026-08-23T12:39:09.651Z",
+  "finished_at": "2026-08-23T12:43:33.330Z",
+  "duration_ms": 263679,
+  "pr": 7,
+  "branch": "feat/spectra-runbook-and-fall-detection",
+  "commit": "c5dbabf",
+  "commit_owner": "carlosluna-sentika",
+  "github_run_id": "32639956138",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32639956138",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32639956138",
+  "ingested_at": "2026-08-23T12:43:57.816Z",
+  "frontend_commit": "c5dbabf",
+  "frontend_branch": "7/merge",
+  "spectra_version": "0.1.0",
+  "suite_file": "alarm.yaml",
+  "cases_passed": 1,
+  "cases_failed": 0,
+  "cases_skipped": 0,
+  "cases_total": 1,
+  "cases": [
+    {
+      "id": "AL-001",
+      "name": "Set up an alarm",
+      "status": "passed",
+      "duration_ms": 258740,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "api.mock",
+          "description": "Stub Sentika reminders REST API for offline UI testing",
+          "status": "passed",
+          "duration_ms": 51,
+          "started_at": "2026-08-23T12:39:15.716Z",
+          "artifacts": {
+            "routes": "(already registered)",
+            "route_count": "11",
+            "reload": "false",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.wait",
+          "description": "Starting point, Home Page",
+          "status": "passed",
+          "duration_ms": 63,
+          "started_at": "2026-08-23T12:39:15.767Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "ui.click",
+          "description": "Enter into the Alarm VIew",
+          "status": "passed",
+          "duration_ms": 141,
+          "started_at": "2026-08-23T12:39:15.830Z",
+          "artifacts": {
+            "selector": "role=button[name=\"Alarm\"]",
+            "click_x": "640.0",
+            "click_y": "82.5",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "description": "Confirm transition to Alarms view",
+          "status": "passed",
+          "duration_ms": 53,
+          "started_at": "2026-08-23T12:39:15.971Z",
+          "artifacts": {
+            "selector": "text=Alarms",
+            "match_x": "413.0",
+            "match_y": "187.0",
+            "match_w": "130.0",
+            "match_h": "60.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "screen.assert",
+          "description": "Assert GUI",
+          "status": "passed",
+          "duration_ms": 63,
+          "started_at": "2026-08-23T12:39:16.024Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step4-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/custom/Alarm.png",
+            "similarity": "0.980312",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step4-actual-diff.png",
+            "message": "Screen match 0.9803 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "description": "Setup new Alarm",
+          "status": "passed",
+          "duration_ms": 107,
+          "started_at": "2026-08-23T12:39:16.087Z",
+          "artifacts": {
+            "selector": "text=Setup Alarm",
+            "click_x": "855.0",
+            "click_y": "491.5",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "set_time",
+          "description": "Alarm target = now + 2 minutes (stored as variable)",
+          "status": "passed",
+          "duration_ms": 46,
+          "started_at": "2026-08-23T12:39:16.194Z",
+          "artifacts": {
+            "stored_time": "alarm",
+            "stored_datetime": "8/23/2026 12:41:00",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "ui.click",
+          "description": "Set hour from stored alarm time",
+          "status": "passed",
+          "duration_ms": 535,
+          "started_at": "2026-08-23T12:39:16.240Z",
+          "artifacts": {
+            "selector": ".time-picker-hour >> text=\"12\"",
+            "wheel_value": "12",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step7-state.png",
+            "stored_time": "alarm",
+            "stored_part": "hour12",
+            "stored_value": "12",
+            "stored_datetime": "8/23/2026 12:41:00"
+          }
+        },
+        {
+          "stepIndex": 8,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 536,
+          "started_at": "2026-08-23T12:39:16.775Z",
+          "artifacts": {
+            "ms": "500",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step8-state.png"
+          }
+        },
+        {
+          "stepIndex": 9,
+          "type": "ui.click",
+          "description": "Set minute from stored alarm time",
+          "status": "passed",
+          "duration_ms": 4507,
+          "started_at": "2026-08-23T12:39:17.311Z",
+          "artifacts": {
+            "selector": ".time-picker-minute >> text=\"41\"",
+            "wheel_value": "41",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step9-state.png",
+            "stored_time": "alarm",
+            "stored_part": "minute",
+            "stored_value": "41",
+            "stored_datetime": "8/23/2026 12:41:00"
+          }
+        },
+        {
+          "stepIndex": 10,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 527,
+          "started_at": "2026-08-23T12:39:21.818Z",
+          "artifacts": {
+            "ms": "500",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step10-state.png"
+          }
+        },
+        {
+          "stepIndex": 11,
+          "type": "ui.click",
+          "description": "Set am/pm from stored alarm time",
+          "status": "passed",
+          "duration_ms": 103,
+          "started_at": "2026-08-23T12:39:22.345Z",
+          "artifacts": {
+            "selector": "text=pm",
+            "click_x": "885.0",
+            "click_y": "416.5",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step11-state.png",
+            "stored_time": "alarm",
+            "stored_part": "period",
+            "stored_value": "pm",
+            "stored_datetime": "8/23/2026 12:41:00"
+          }
+        },
+        {
+          "stepIndex": 12,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 529,
+          "started_at": "2026-08-23T12:39:22.448Z",
+          "artifacts": {
+            "ms": "500",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step12-state.png"
+          }
+        },
+        {
+          "stepIndex": 13,
+          "type": "ui.click",
+          "status": "passed",
+          "duration_ms": 123,
+          "started_at": "2026-08-23T12:39:22.977Z",
+          "artifacts": {
+            "selector": "text=Next",
+            "click_x": "865.0",
+            "click_y": "618.5",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step13-state.png"
+          }
+        },
+        {
+          "stepIndex": 14,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 60,
+          "started_at": "2026-08-23T12:39:23.100Z",
+          "artifacts": {
+            "selector": "text=Days of the Week",
+            "match_x": "355.0",
+            "match_y": "371.5",
+            "match_w": "570.0",
+            "match_h": "28.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step14-state.png"
+          }
+        },
+        {
+          "stepIndex": 15,
+          "type": "ui.click",
+          "description": "Select today's weekday (Sentika day picker label for run time, e.g. Fr)",
+          "status": "passed",
+          "duration_ms": 338,
+          "started_at": "2026-08-23T12:39:23.160Z",
+          "artifacts": {
+            "selector": "role=button[name=\"Su\"]",
+            "click_x": "895.0",
+            "click_y": "446.3",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step15-state.png"
+          }
+        },
+        {
+          "stepIndex": 16,
+          "type": "ui.click",
+          "description": "Enable repeat weekly toggle",
+          "status": "passed",
+          "duration_ms": 113,
+          "started_at": "2026-08-23T12:39:23.498Z",
+          "artifacts": {
+            "selector": "role=switch",
+            "click_x": "892.5",
+            "click_y": "528.5",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step16-state.png"
+          }
+        },
+        {
+          "stepIndex": 17,
+          "type": "ui.click",
+          "description": "Save alarm and return to list",
+          "status": "passed",
+          "duration_ms": 103,
+          "started_at": "2026-08-23T12:39:23.611Z",
+          "artifacts": {
+            "selector": "role=button[name=\"Save Alarm\"]",
+            "click_x": "836.5",
+            "click_y": "614.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step17-state.png"
+          }
+        },
+        {
+          "stepIndex": 18,
+          "type": "ui.wait",
+          "description": "Back on alarms list (wait for list-only control, not edit header)",
+          "status": "passed",
+          "duration_ms": 77,
+          "started_at": "2026-08-23T12:39:23.714Z",
+          "artifacts": {
+            "selector": "text=Add New Alarm",
+            "match_x": "732.0",
+            "match_y": "452.5",
+            "match_w": "201.0",
+            "match_h": "46.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step18-state.png"
+          }
+        },
+        {
+          "stepIndex": 19,
+          "type": "wait",
+          "description": "Wait until 1 minute before alarm fires",
+          "status": "passed",
+          "duration_ms": 36251,
+          "started_at": "2026-08-23T12:39:23.791Z",
+          "artifacts": {
+            "until": "alarm-1m",
+            "waited_ms": "36208",
+            "target_time": "8/23/2026 12:40:00",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step19-state.png"
+          }
+        },
+        {
+          "stepIndex": 20,
+          "type": "screen.capture",
+          "description": "Screenshot 1 min before alarm",
+          "status": "passed",
+          "duration_ms": 31,
+          "started_at": "2026-08-23T12:40:00.043Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step20-before-alarm-1m.png",
+            "capture_name": "before-alarm-1m"
+          }
+        },
+        {
+          "stepIndex": 21,
+          "type": "wait",
+          "description": "Wait until alarm time",
+          "status": "passed",
+          "duration_ms": 60035,
+          "started_at": "2026-08-23T12:40:00.074Z",
+          "artifacts": {
+            "until": "alarm",
+            "waited_ms": "59925",
+            "target_time": "8/23/2026 12:41:00",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step21-state.png"
+          }
+        },
+        {
+          "stepIndex": 22,
+          "type": "ui.wait",
+          "description": "Wait for alarm modal (scheduler heartbeat is minute-aligned, up to ~60s skew)",
+          "status": "passed",
+          "duration_ms": 48,
+          "started_at": "2026-08-23T12:41:00.109Z",
+          "artifacts": {
+            "selector": "role=button[name=\"Snooze\"]",
+            "match_x": "416.0",
+            "match_y": "585.0",
+            "match_w": "212.0",
+            "match_h": "60.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step22-state.png"
+          }
+        },
+        {
+          "stepIndex": 23,
+          "type": "screen.capture",
+          "description": "Screenshot when alarm modal is visible",
+          "status": "passed",
+          "duration_ms": 50,
+          "started_at": "2026-08-23T12:41:00.157Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step23-at-alarm-firing.png",
+            "capture_name": "at-alarm-firing"
+          }
+        },
+        {
+          "stepIndex": 24,
+          "type": "ui.click",
+          "description": "Snooze (Sentika ALARM_SNOOZE_TIME_MINUTES = 1 min re-fire)",
+          "status": "passed",
+          "duration_ms": 123,
+          "started_at": "2026-08-23T12:41:00.207Z",
+          "artifacts": {
+            "selector": "role=button[name=\"Snooze\"]",
+            "click_x": "522.0",
+            "click_y": "615.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step24-state.png"
+          }
+        },
+        {
+          "stepIndex": 25,
+          "type": "wait",
+          "description": "Allow dismiss animation",
+          "status": "passed",
+          "duration_ms": 829,
+          "started_at": "2026-08-23T12:41:00.330Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step25-state.png"
+          }
+        },
+        {
+          "stepIndex": 26,
+          "type": "screen.capture",
+          "description": "Screenshot after snooze (modal dismissed)",
+          "status": "passed",
+          "duration_ms": 27,
+          "started_at": "2026-08-23T12:41:01.159Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step26-after-snooze.png",
+            "capture_name": "after-snooze"
+          }
+        },
+        {
+          "stepIndex": 27,
+          "type": "screen.wait_change",
+          "description": "Wait for snooze reactivation (~1 min snooze + minute-aligned heartbeat)",
+          "status": "passed",
+          "duration_ms": 61063,
+          "started_at": "2026-08-23T12:41:01.186Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step27-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step26-after-snooze.png",
+            "reference": "after-snooze",
+            "expect": "different",
+            "similarity": "0.028351",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step27-actual-diff.png",
+            "message": "Screen changed (similarity 0.028 < 0.85)"
+          }
+        },
+        {
+          "stepIndex": 28,
+          "type": "screen.capture",
+          "description": "Screenshot when alarm modal reappears",
+          "status": "passed",
+          "duration_ms": 38,
+          "started_at": "2026-08-23T12:42:02.249Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step28-at-reactivation.png",
+            "capture_name": "at-reactivation"
+          }
+        },
+        {
+          "stepIndex": 29,
+          "type": "ui.click",
+          "description": "Stop/dismiss the reactivated alarm",
+          "status": "passed",
+          "duration_ms": 109,
+          "started_at": "2026-08-23T12:42:02.287Z",
+          "artifacts": {
+            "selector": "role=button[name=\"Stop\"]",
+            "click_x": "758.0",
+            "click_y": "615.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step29-state.png"
+          }
+        },
+        {
+          "stepIndex": 30,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 828,
+          "started_at": "2026-08-23T12:42:02.396Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step30-state.png"
+          }
+        },
+        {
+          "stepIndex": 31,
+          "type": "screen.capture",
+          "description": "Screenshot immediately after Stop",
+          "status": "passed",
+          "duration_ms": 26,
+          "started_at": "2026-08-23T12:42:03.224Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step31-after-stop.png",
+            "capture_name": "after-stop"
+          }
+        },
+        {
+          "stepIndex": 32,
+          "type": "wait",
+          "description": "Wait 90s after stop (past snooze window; alarm should stay quiet)",
+          "status": "passed",
+          "duration_ms": 90050,
+          "started_at": "2026-08-23T12:42:03.250Z",
+          "artifacts": {
+            "ms": "90000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step32-state.png"
+          }
+        },
+        {
+          "stepIndex": 33,
+          "type": "screen.capture",
+          "description": "Screenshot 90s after stop (alarm should stay quiet)",
+          "status": "passed",
+          "duration_ms": 30,
+          "started_at": "2026-08-23T12:43:33.300Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-39-09-651Z/AL-001/AL-001-step33-after-stop-plus-90s.png",
+            "capture_name": "after-stop-plus-90s"
+          }
+        }
+      ]
+    }
+  ],
+  "failed_steps": []
+}
