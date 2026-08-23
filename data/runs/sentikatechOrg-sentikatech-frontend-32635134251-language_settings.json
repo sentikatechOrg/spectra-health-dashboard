@@ -1,0 +1,281 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-32635134251-language_settings",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "language_settings",
+  "status": "passed",
+  "pass_rate": 1,
+  "started_at": "2026-08-23T10:57:38.319Z",
+  "finished_at": "2026-08-23T10:57:49.007Z",
+  "duration_ms": 10688,
+  "pr": 6,
+  "branch": "feat/spectra-add-reminder-medicine",
+  "commit": "225dede",
+  "commit_owner": "carlosluna-sentika",
+  "github_run_id": "32635134251",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32635134251",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32635134251",
+  "ingested_at": "2026-08-23T11:01:57.574Z",
+  "frontend_commit": "225dede",
+  "frontend_branch": "6/merge",
+  "spectra_version": "0.1.0",
+  "suite_file": "language_settings.yaml",
+  "cases_passed": 1,
+  "cases_failed": 0,
+  "cases_skipped": 0,
+  "cases_total": 1,
+  "cases": [
+    {
+      "id": "LS-001",
+      "name": "Test UI daily interactions",
+      "status": "passed",
+      "duration_ms": 4807,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "description": "Starting app view, Home page.",
+          "status": "passed",
+          "duration_ms": 93,
+          "started_at": "2026-08-23T10:57:45.108Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.click",
+          "description": "Tapping the screen 10 times to access the Settings page.",
+          "status": "passed",
+          "duration_ms": 2716,
+          "started_at": "2026-08-23T10:57:45.201Z",
+          "artifacts": {
+            "selector": "text=:",
+            "count": "10",
+            "interval_ms": "250",
+            "click_x": "639.0",
+            "click_y": "203.6",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "ui.wait",
+          "description": "Verify transition to Settings page.",
+          "status": "passed",
+          "duration_ms": 67,
+          "started_at": "2026-08-23T10:57:47.917Z",
+          "artifacts": {
+            "selector": "text=Settings",
+            "match_x": "421.0",
+            "match_y": "229.5",
+            "match_w": "146.0",
+            "match_h": "44.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.click",
+          "description": "Expand Languages dropdown.",
+          "status": "passed",
+          "duration_ms": 103,
+          "started_at": "2026-08-23T10:57:47.984Z",
+          "artifacts": {
+            "selector": "text=English",
+            "click_x": "414.5",
+            "click_y": "424.5",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "ui.wait",
+          "description": "Verify dropdown item: English",
+          "status": "passed",
+          "duration_ms": 68,
+          "started_at": "2026-08-23T10:57:48.087Z",
+          "artifacts": {
+            "selector": "text=English",
+            "match_x": "388.0",
+            "match_y": "412.5",
+            "match_w": "53.0",
+            "match_h": "24.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "description": "Verify dropdown item: Swedish",
+          "status": "passed",
+          "duration_ms": 55,
+          "started_at": "2026-08-23T10:57:48.155Z",
+          "artifacts": {
+            "selector": "text=Swedish",
+            "match_x": "388.0",
+            "match_y": "509.5",
+            "match_w": "62.0",
+            "match_h": "24.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "ui.wait",
+          "description": "Verify dropdown item: Norwegian",
+          "status": "passed",
+          "duration_ms": 47,
+          "started_at": "2026-08-23T10:57:48.210Z",
+          "artifacts": {
+            "selector": "text=Norwegian",
+            "match_x": "388.0",
+            "match_y": "557.5",
+            "match_w": "79.0",
+            "match_h": "24.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "ui.wait",
+          "description": "Verify dropdown item: Indonesian",
+          "status": "passed",
+          "duration_ms": 43,
+          "started_at": "2026-08-23T10:57:48.257Z",
+          "artifacts": {
+            "selector": "text=Indonesian",
+            "match_x": "388.0",
+            "match_y": "605.5",
+            "match_w": "78.0",
+            "match_h": "24.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step7-state.png"
+          }
+        },
+        {
+          "stepIndex": 8,
+          "type": "ui.click",
+          "description": "Change Language setting to Swedish",
+          "status": "passed",
+          "duration_ms": 162,
+          "started_at": "2026-08-23T10:57:48.300Z",
+          "artifacts": {
+            "selector": "text=Swedish",
+            "click_x": "419.0",
+            "click_y": "521.5",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step8-state.png"
+          }
+        },
+        {
+          "stepIndex": 9,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 107,
+          "started_at": "2026-08-23T10:57:48.462Z",
+          "artifacts": {
+            "selector": "text=Inställningar",
+            "match_x": "421.0",
+            "match_y": "229.5",
+            "match_w": "146.0",
+            "match_h": "44.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step9-state.png"
+          }
+        },
+        {
+          "stepIndex": 10,
+          "type": "ui.click",
+          "description": "Confirm the new setting (Swedish selection as language)",
+          "status": "passed",
+          "duration_ms": 133,
+          "started_at": "2026-08-23T10:57:48.569Z",
+          "artifacts": {
+            "selector": "text=Klar",
+            "click_x": "902.5",
+            "click_y": "551.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step10-state.png"
+          }
+        },
+        {
+          "stepIndex": 11,
+          "type": "ui.wait",
+          "description": "Confirm User feedback of setting settlement",
+          "status": "passed",
+          "duration_ms": 50,
+          "started_at": "2026-08-23T10:57:48.702Z",
+          "artifacts": {
+            "selector": "text=Inställningarna sparades!",
+            "match_x": "96.0",
+            "match_y": "81.0",
+            "match_w": "185.0",
+            "match_h": "22.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step11-state.png"
+          }
+        },
+        {
+          "stepIndex": 12,
+          "type": "ui.click",
+          "description": "Go back to home",
+          "status": "passed",
+          "duration_ms": 117,
+          "started_at": "2026-08-23T10:57:48.752Z",
+          "artifacts": {
+            "selector": "role=button[name=\"Tillbaka\"]",
+            "click_x": "1152.0",
+            "click_y": "96.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step12-state.png"
+          }
+        },
+        {
+          "stepIndex": 13,
+          "type": "ui.wait",
+          "description": "Confirm text translation",
+          "status": "passed",
+          "duration_ms": 138,
+          "started_at": "2026-08-23T10:57:48.869Z",
+          "artifacts": {
+            "selector": "text=Medicinpåminnelse",
+            "match_x": "210.3",
+            "match_y": "499.0",
+            "match_w": "329.3",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T10-57-38-319Z/LS-001/LS-001-step13-state.png"
+          }
+        }
+      ]
+    }
+  ],
+  "failed_steps": []
+}
