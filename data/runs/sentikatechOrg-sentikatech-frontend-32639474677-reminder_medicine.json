@@ -1,0 +1,615 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-32639474677-reminder_medicine",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "reminder_medicine",
+  "status": "passed",
+  "pass_rate": 1,
+  "started_at": "2026-08-23T12:29:24.287Z",
+  "finished_at": "2026-08-23T12:29:47.162Z",
+  "duration_ms": 22875,
+  "pr": 7,
+  "branch": "feat/spectra-runbook-and-fall-detection",
+  "commit": "9c73616",
+  "commit_owner": "carlosluna-sentika",
+  "github_run_id": "32639474677",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32639474677",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32639474677",
+  "ingested_at": "2026-08-23T12:34:00.657Z",
+  "frontend_commit": "9c73616",
+  "frontend_branch": "7/merge",
+  "spectra_version": "0.1.0",
+  "suite_file": "reminder_medicine.yaml",
+  "cases_passed": 1,
+  "cases_failed": 0,
+  "cases_skipped": 0,
+  "cases_total": 1,
+  "cases": [
+    {
+      "id": "RM-001",
+      "name": "Medicine reminder flow (home → hub → day → empty → week → month)",
+      "status": "passed",
+      "duration_ms": 15652,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "api.mock",
+          "description": "Stub my-medicine API with scheduled medicines for day/week/month views",
+          "status": "passed",
+          "duration_ms": 75,
+          "started_at": "2026-08-23T12:29:32.962Z",
+          "artifacts": {
+            "routes": "(already registered)",
+            "route_count": "6",
+            "reload": "false",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.wait",
+          "description": "Home — wait for Medical Reminder tile",
+          "status": "passed",
+          "duration_ms": 83,
+          "started_at": "2026-08-23T12:29:33.037Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 845,
+          "started_at": "2026-08-23T12:29:33.120Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "screen.capture",
+          "status": "passed",
+          "duration_ms": 56,
+          "started_at": "2026-08-23T12:29:33.965Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step3-rm-home.png",
+            "capture_name": "rm-home"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "screen.assert",
+          "description": "Home dashboard",
+          "status": "passed",
+          "duration_ms": 102,
+          "started_at": "2026-08-23T12:29:34.021Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step4-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/reminder_medicine/rm-home.png",
+            "similarity": "0.989326",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step4-actual-diff.png",
+            "message": "Screen match 0.9893 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "description": "Open Medical Reminder hub",
+          "status": "passed",
+          "duration_ms": 139,
+          "started_at": "2026-08-23T12:29:34.123Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "click_x": "374.9",
+            "click_y": "526.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 103,
+          "started_at": "2026-08-23T12:29:34.262Z",
+          "artifacts": {
+            "selector": "text=My Medicine",
+            "match_x": "561.5",
+            "match_y": "357.0",
+            "match_w": "189.1",
+            "match_h": "48.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 67,
+          "started_at": "2026-08-23T12:29:34.365Z",
+          "artifacts": {
+            "selector": "text=Doctor Appointment",
+            "match_x": "492.5",
+            "match_y": "617.0",
+            "match_w": "327.0",
+            "match_h": "48.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step7-state.png"
+          }
+        },
+        {
+          "stepIndex": 8,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 838,
+          "started_at": "2026-08-23T12:29:34.432Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step8-state.png"
+          }
+        },
+        {
+          "stepIndex": 9,
+          "type": "screen.capture",
+          "status": "passed",
+          "duration_ms": 45,
+          "started_at": "2026-08-23T12:29:35.270Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step9-rm-medical-hub.png",
+            "capture_name": "rm-medical-hub"
+          }
+        },
+        {
+          "stepIndex": 10,
+          "type": "screen.assert",
+          "description": "Medical Reminder — My Medicine / Doctor Appointment",
+          "status": "passed",
+          "duration_ms": 89,
+          "started_at": "2026-08-23T12:29:35.315Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step10-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/reminder_medicine/rm-medical-hub.png",
+            "similarity": "0.997811",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step10-actual-diff.png",
+            "message": "Screen match 0.9978 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 11,
+          "type": "ui.click",
+          "description": "Open My Medicine",
+          "status": "passed",
+          "duration_ms": 122,
+          "started_at": "2026-08-23T12:29:35.404Z",
+          "artifacts": {
+            "selector": "text=My Medicine",
+            "click_x": "656.0",
+            "click_y": "381.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step11-state.png"
+          }
+        },
+        {
+          "stepIndex": 12,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 155,
+          "started_at": "2026-08-23T12:29:35.526Z",
+          "artifacts": {
+            "selector": "role=tab[name=\"Day\"]",
+            "match_x": "428.5",
+            "match_y": "145.0",
+            "match_w": "125.0",
+            "match_h": "50.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step12-state.png"
+          }
+        },
+        {
+          "stepIndex": 13,
+          "type": "browser.eval",
+          "description": "Jump to populated day (matches mockup medicines)",
+          "status": "passed",
+          "duration_ms": 262,
+          "started_at": "2026-08-23T12:29:35.681Z",
+          "artifacts": {
+            "expression": "window.location.assign('/en/medical-reminder/my-medicine?view=today&day=23&month=10&year=2026')",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step13-state.png"
+          }
+        },
+        {
+          "stepIndex": 14,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 962,
+          "started_at": "2026-08-23T12:29:35.943Z",
+          "artifacts": {
+            "selector": "text=Vitamin D",
+            "match_x": "316.5",
+            "match_y": "326.8",
+            "match_w": "139.6",
+            "match_h": "45.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step14-state.png"
+          }
+        },
+        {
+          "stepIndex": 15,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 64,
+          "started_at": "2026-08-23T12:29:36.905Z",
+          "artifacts": {
+            "selector": "text=Multivitamin",
+            "match_x": "316.5",
+            "match_y": "506.8",
+            "match_w": "174.8",
+            "match_h": "45.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step15-state.png"
+          }
+        },
+        {
+          "stepIndex": 16,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 66,
+          "started_at": "2026-08-23T12:29:36.969Z",
+          "artifacts": {
+            "selector": "text=Blood Pressure",
+            "match_x": "316.5",
+            "match_y": "686.8",
+            "match_w": "214.6",
+            "match_h": "45.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step16-state.png"
+          }
+        },
+        {
+          "stepIndex": 17,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 1042,
+          "started_at": "2026-08-23T12:29:37.035Z",
+          "artifacts": {
+            "ms": "1000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step17-state.png"
+          }
+        },
+        {
+          "stepIndex": 18,
+          "type": "screen.capture",
+          "status": "passed",
+          "duration_ms": 59,
+          "started_at": "2026-08-23T12:29:38.077Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step18-rm-day-populated.png",
+            "capture_name": "rm-day-populated"
+          }
+        },
+        {
+          "stepIndex": 19,
+          "type": "screen.assert",
+          "description": "Day view — Vitamin D, Multivitamin, Blood Pressure at 09:00",
+          "status": "passed",
+          "duration_ms": 93,
+          "started_at": "2026-08-23T12:29:38.136Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step19-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/reminder_medicine/rm-day-populated.png",
+            "similarity": "0.997811",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step19-actual-diff.png",
+            "message": "Screen match 0.9978 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 20,
+          "type": "browser.eval",
+          "description": "Jump to day with no scheduled medicines",
+          "status": "passed",
+          "duration_ms": 254,
+          "started_at": "2026-08-23T12:29:38.229Z",
+          "artifacts": {
+            "expression": "window.location.assign('/en/medical-reminder/my-medicine?view=today&day=24&month=10&year=2026')",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step20-state.png"
+          }
+        },
+        {
+          "stepIndex": 21,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 914,
+          "started_at": "2026-08-23T12:29:38.483Z",
+          "artifacts": {
+            "selector": "text=No medicines scheduled for this day.",
+            "match_x": "368.5",
+            "match_y": "457.5",
+            "match_w": "543.0",
+            "match_h": "48.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step21-state.png"
+          }
+        },
+        {
+          "stepIndex": 22,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 838,
+          "started_at": "2026-08-23T12:29:39.397Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step22-state.png"
+          }
+        },
+        {
+          "stepIndex": 23,
+          "type": "screen.capture",
+          "status": "passed",
+          "duration_ms": 45,
+          "started_at": "2026-08-23T12:29:40.235Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step23-rm-day-empty.png",
+            "capture_name": "rm-day-empty"
+          }
+        },
+        {
+          "stepIndex": 24,
+          "type": "screen.assert",
+          "description": "Day view — empty state",
+          "status": "passed",
+          "duration_ms": 87,
+          "started_at": "2026-08-23T12:29:40.280Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step24-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/reminder_medicine/rm-day-empty.png",
+            "similarity": "0.997811",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step24-actual-diff.png",
+            "message": "Screen match 0.9978 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 25,
+          "type": "browser.eval",
+          "description": "Week 43 of 2026 (Oct 18–24)",
+          "status": "passed",
+          "duration_ms": 254,
+          "started_at": "2026-08-23T12:29:40.367Z",
+          "artifacts": {
+            "expression": "window.location.assign('/en/medical-reminder/my-medicine?view=week&week=43&year=2026')",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step25-state.png"
+          }
+        },
+        {
+          "stepIndex": 26,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 942,
+          "started_at": "2026-08-23T12:29:40.622Z",
+          "artifacts": {
+            "selector": "text=Week 43",
+            "match_x": "530.5",
+            "match_y": "219.0",
+            "match_w": "219.0",
+            "match_h": "30.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step26-state.png"
+          }
+        },
+        {
+          "stepIndex": 27,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 59,
+          "started_at": "2026-08-23T12:29:41.564Z",
+          "artifacts": {
+            "selector": "text=Calcium",
+            "match_x": "483.0",
+            "match_y": "386.0",
+            "match_w": "180.0",
+            "match_h": "33.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step27-state.png"
+          }
+        },
+        {
+          "stepIndex": 28,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 70,
+          "started_at": "2026-08-23T12:29:41.623Z",
+          "artifacts": {
+            "selector": "text=Aspirin",
+            "match_x": "483.0",
+            "match_y": "487.0",
+            "match_w": "180.0",
+            "match_h": "33.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step28-state.png"
+          }
+        },
+        {
+          "stepIndex": 29,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 1044,
+          "started_at": "2026-08-23T12:29:41.693Z",
+          "artifacts": {
+            "ms": "1000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step29-state.png"
+          }
+        },
+        {
+          "stepIndex": 30,
+          "type": "screen.capture",
+          "status": "passed",
+          "duration_ms": 49,
+          "started_at": "2026-08-23T12:29:42.737Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step30-rm-week.png",
+            "capture_name": "rm-week"
+          }
+        },
+        {
+          "stepIndex": 31,
+          "type": "screen.assert",
+          "description": "Week view — Calcium, Aspirin, Vitamin E; Thu Blood Pressure slots",
+          "status": "passed",
+          "duration_ms": 93,
+          "started_at": "2026-08-23T12:29:42.786Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step31-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/reminder_medicine/rm-week.png",
+            "similarity": "0.997811",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step31-actual-diff.png",
+            "message": "Screen match 0.9978 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 32,
+          "type": "browser.eval",
+          "description": "October 2026 calendar",
+          "status": "passed",
+          "duration_ms": 259,
+          "started_at": "2026-08-23T12:29:42.879Z",
+          "artifacts": {
+            "expression": "window.location.assign('/en/medical-reminder/my-medicine?view=month&month=10&year=2026')",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step32-state.png"
+          }
+        },
+        {
+          "stepIndex": 33,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 950,
+          "started_at": "2026-08-23T12:29:43.138Z",
+          "artifacts": {
+            "selector": "role=tab[name=\"Month\"]",
+            "match_x": "726.5",
+            "match_y": "145.0",
+            "match_w": "125.0",
+            "match_h": "50.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step33-state.png"
+          }
+        },
+        {
+          "stepIndex": 34,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 1249,
+          "started_at": "2026-08-23T12:29:44.088Z",
+          "artifacts": {
+            "ms": "1200",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step34-state.png"
+          }
+        },
+        {
+          "stepIndex": 35,
+          "type": "screen.capture",
+          "status": "passed",
+          "duration_ms": 50,
+          "started_at": "2026-08-23T12:29:45.337Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step35-rm-month-oct.png",
+            "capture_name": "rm-month-oct"
+          }
+        },
+        {
+          "stepIndex": 36,
+          "type": "screen.assert",
+          "description": "Month view — October 2026",
+          "status": "passed",
+          "duration_ms": 91,
+          "started_at": "2026-08-23T12:29:45.387Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step36-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/reminder_medicine/rm-month-oct.png",
+            "similarity": "0.997811",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step36-actual-diff.png",
+            "message": "Screen match 0.9978 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 37,
+          "type": "browser.eval",
+          "description": "April 2027 calendar (in Sentika cache window)",
+          "status": "passed",
+          "duration_ms": 281,
+          "started_at": "2026-08-23T12:29:45.478Z",
+          "artifacts": {
+            "expression": "window.location.assign('/en/medical-reminder/my-medicine?view=month&month=4&year=2027')",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step37-state.png"
+          }
+        },
+        {
+          "stepIndex": 38,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 1252,
+          "started_at": "2026-08-23T12:29:45.759Z",
+          "artifacts": {
+            "ms": "1200",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step38-state.png"
+          }
+        },
+        {
+          "stepIndex": 39,
+          "type": "screen.capture",
+          "status": "passed",
+          "duration_ms": 60,
+          "started_at": "2026-08-23T12:29:47.011Z",
+          "artifacts": {
+            "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step39-rm-month-apr.png",
+            "capture_name": "rm-month-apr"
+          }
+        },
+        {
+          "stepIndex": 40,
+          "type": "screen.assert",
+          "description": "Month view — April 2027",
+          "status": "passed",
+          "duration_ms": 91,
+          "started_at": "2026-08-23T12:29:47.071Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step40-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/reminder_medicine/rm-month-apr.png",
+            "similarity": "0.997811",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-24-287Z/RM-001/RM-001-step40-actual-diff.png",
+            "message": "Screen match 0.9978 >= 0.8500"
+          }
+        }
+      ]
+    }
+  ],
+  "failed_steps": []
+}

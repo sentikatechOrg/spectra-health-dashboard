@@ -1,0 +1,932 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-32639474677-fall-detection",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "fall-detection",
+  "status": "failed",
+  "pass_rate": 0,
+  "started_at": "2026-08-23T12:29:15.376Z",
+  "finished_at": "2026-08-23T12:29:48.656Z",
+  "duration_ms": 33280,
+  "pr": 7,
+  "branch": "feat/spectra-runbook-and-fall-detection",
+  "commit": "9c73616",
+  "commit_owner": "carlosluna-sentika",
+  "github_run_id": "32639474677",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32639474677",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32639474677",
+  "ingested_at": "2026-08-23T12:34:00.645Z",
+  "frontend_commit": "9c73616",
+  "frontend_branch": "7/merge",
+  "spectra_version": "0.1.0",
+  "suite_file": "fall-detection.yaml",
+  "cases_passed": 0,
+  "cases_failed": 9,
+  "cases_skipped": 0,
+  "cases_total": 9,
+  "cases": [
+    {
+      "id": "FD-001",
+      "name": "UI show fall detection modal",
+      "status": "failed",
+      "duration_ms": 3146,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "description": "Start of the test: The Medical Reminder home screen should be our starting point.",
+          "status": "passed",
+          "duration_ms": 105,
+          "started_at": "2026-08-23T12:29:22.534Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001/FD-001-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2039,
+          "started_at": "2026-08-23T12:29:22.639Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001/FD-001-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 48,
+          "started_at": "2026-08-23T12:29:24.678Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001/FD-001-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:24.726Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:24.728Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:24.729Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-001-01",
+      "name": "User taps I'm OK shows safe confirmation (UI Click)",
+      "status": "failed",
+      "duration_ms": 3014,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 85,
+          "started_at": "2026-08-23T12:29:25.571Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-01/FD-001-01-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2037,
+          "started_at": "2026-08-23T12:29:25.656Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-01/FD-001-01-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 46,
+          "started_at": "2026-08-23T12:29:27.693Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-01/FD-001-01-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:27.739Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "ui.click",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:27.741Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:27.742Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:27.743Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:27.743Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-001-02",
+      "name": "User taps Help shows help alert (UI Click)",
+      "status": "failed",
+      "duration_ms": 3002,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 68,
+          "started_at": "2026-08-23T12:29:28.593Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-02/FD-001-02-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2037,
+          "started_at": "2026-08-23T12:29:28.661Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-02/FD-001-02-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 43,
+          "started_at": "2026-08-23T12:29:30.698Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-02/FD-001-02-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:30.741Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "ui.click",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:30.742Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:30.743Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:30.745Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:30.745Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-004",
+      "name": "UI show \"Help on the way\" after 30 secs",
+      "status": "failed",
+      "duration_ms": 3028,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 77,
+          "started_at": "2026-08-23T12:29:31.612Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-004/FD-004-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2035,
+          "started_at": "2026-08-23T12:29:31.689Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-004/FD-004-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 48,
+          "started_at": "2026-08-23T12:29:33.724Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-004/FD-004-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:33.772Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:33.772Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:33.773Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:33.773Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:33.774Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-005",
+      "name": "UI show \"Help on the way\"",
+      "status": "failed",
+      "duration_ms": 2966,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 69,
+          "started_at": "2026-08-23T12:29:34.586Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-005/FD-005-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2035,
+          "started_at": "2026-08-23T12:29:34.655Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-005/FD-005-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 48,
+          "started_at": "2026-08-23T12:29:36.690Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-005/FD-005-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:36.738Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:36.739Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:36.739Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:36.740Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:36.740Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-006",
+      "name": "UI redirect to home page and show \"Glad to know you are save\"",
+      "status": "failed",
+      "duration_ms": 2966,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 63,
+          "started_at": "2026-08-23T12:29:37.565Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-006/FD-006-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2036,
+          "started_at": "2026-08-23T12:29:37.628Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-006/FD-006-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 40,
+          "started_at": "2026-08-23T12:29:39.664Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-006/FD-006-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:39.704Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:39.705Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:39.705Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:39.706Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:39.706Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-007",
+      "name": "Change to stand by mode",
+      "status": "failed",
+      "duration_ms": 2984,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 68,
+          "started_at": "2026-08-23T12:29:40.531Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-007/FD-007-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2039,
+          "started_at": "2026-08-23T12:29:40.599Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-007/FD-007-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 49,
+          "started_at": "2026-08-23T12:29:42.638Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-007/FD-007-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:42.687Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:42.688Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:42.688Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:42.689Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:42.689Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 8,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:42.690Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 9,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:42.691Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-008",
+      "name": "Dispatch Event handler clickButtonOk",
+      "status": "failed",
+      "duration_ms": 2966,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 78,
+          "started_at": "2026-08-23T12:29:43.494Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-008/FD-008-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2036,
+          "started_at": "2026-08-23T12:29:43.572Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-008/FD-008-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 46,
+          "started_at": "2026-08-23T12:29:45.608Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-008/FD-008-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:45.654Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:45.655Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:45.656Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:45.656Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:45.657Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    },
+    {
+      "id": "FD-009",
+      "name": "Dispatch Event handler clickButtonOk (HELP Case)",
+      "status": "failed",
+      "duration_ms": 2999,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 80,
+          "started_at": "2026-08-23T12:29:46.492Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-009/FD-009-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2034,
+          "started_at": "2026-08-23T12:29:46.572Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-009/FD-009-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "failed",
+          "duration_ms": 47,
+          "started_at": "2026-08-23T12:29:48.606Z",
+          "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+          "artifacts": {
+            "event": "INCIDENT_FALL_DOWN_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "0",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-009/FD-009-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:48.653Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:48.654Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:48.654Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:48.655Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T12:29:48.655Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected"
+    }
+  ],
+  "failed_steps": [
+    {
+      "case_id": "FD-001",
+      "case_name": "UI show fall detection modal",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001/FD-001-step2-state.png"
+    },
+    {
+      "case_id": "FD-001-01",
+      "case_name": "User taps I'm OK shows safe confirmation (UI Click)",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-01/FD-001-01-step2-state.png"
+    },
+    {
+      "case_id": "FD-001-02",
+      "case_name": "User taps Help shows help alert (UI Click)",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-001-02/FD-001-02-step2-state.png"
+    },
+    {
+      "case_id": "FD-004",
+      "case_name": "UI show \"Help on the way\" after 30 secs",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-004/FD-004-step2-state.png"
+    },
+    {
+      "case_id": "FD-005",
+      "case_name": "UI show \"Help on the way\"",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-005/FD-005-step2-state.png"
+    },
+    {
+      "case_id": "FD-006",
+      "case_name": "UI redirect to home page and show \"Glad to know you are save\"",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-006/FD-006-step2-state.png"
+    },
+    {
+      "case_id": "FD-007",
+      "case_name": "Change to stand by mode",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-007/FD-007-step2-state.png"
+    },
+    {
+      "case_id": "FD-008",
+      "case_name": "Dispatch Event handler clickButtonOk",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-008/FD-008-step2-state.png"
+    },
+    {
+      "case_id": "FD-009",
+      "case_name": "Dispatch Event handler clickButtonOk (HELP Case)",
+      "step": 3,
+      "type": "socket.inject",
+      "message": "Injected INCIDENT_FALL_DOWN_DETECTED but no browser clients were connected",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T12-29-15-376Z/FD-009/FD-009-step2-state.png"
+    }
+  ]
+}
