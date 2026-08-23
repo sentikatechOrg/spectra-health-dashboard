@@ -1,11 +1,30 @@
 import { localDateKey } from "./format";
-import type { ManifestRun, RangeKey } from "../types";
+import type { FailuresRangeKey, ManifestRun, RangeKey } from "../types";
 
 export function filterByRange(runs: ManifestRun[], range: RangeKey, now = Date.now()): ManifestRun[] {
   if (range === "all") return runs;
   const days = range === "90" ? 90 : 30;
   const cutoff = now - days * 24 * 60 * 60 * 1000;
   return runs.filter((run) => Date.parse(run.started_at) >= cutoff);
+}
+
+/** Keep runs from the most recently seen pull request (same repo + PR number). */
+export function filterLatestPr(runs: ManifestRun[]): ManifestRun[] {
+  const withPr = runs.filter((run) => run.pr != null);
+  if (!withPr.length) return [];
+  const latest = withPr.reduce((best, run) =>
+    Date.parse(run.started_at) >= Date.parse(best.started_at) ? run : best
+  );
+  return runs.filter((run) => run.pr === latest.pr && run.repo === latest.repo);
+}
+
+export function filterFailuresRange(
+  runs: ManifestRun[],
+  range: FailuresRangeKey,
+  now = Date.now(),
+): ManifestRun[] {
+  if (range === "pr") return filterLatestPr(runs);
+  return filterByRange(runs, range, now);
 }
 
 export function totals(runs: ManifestRun[]) {
