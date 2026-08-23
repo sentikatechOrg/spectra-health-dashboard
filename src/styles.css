@@ -144,6 +144,7 @@ button, select { font: inherit; }
   cursor: pointer;
   color: var(--muted);
   font-weight: 600;
+  white-space: nowrap;
 }
 .range button.active {
   background: var(--navy);
@@ -272,6 +273,11 @@ tr.clickable:hover { background: #f6f8fb; }
   padding: 3px 9px;
   font-size: 0.75rem;
   font-weight: 700;
+  white-space: nowrap;
+}
+.pill.suite {
+  flex-shrink: 0;
+  padding: 4px 10px;
 }
 .pill.passed, .pill.good { background: var(--good-soft); color: var(--good); }
 .pill.failed, .pill.bad { background: var(--bad-soft); color: var(--bad); }
@@ -403,6 +409,10 @@ tr.clickable:hover { background: #f6f8fb; }
 .shot img { display: block; width: 100%; }
 .shot .missing { padding: 18px; color: var(--muted); font-size: 0.84rem; }
 
+.fail-row {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+}
 .fail-group { margin-bottom: 14px; }
 .fail-group h3 { margin: 0 0 6px; font-size: 0.95rem; }
 .muted { color: var(--muted); }

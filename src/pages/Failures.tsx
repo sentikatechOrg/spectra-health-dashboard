@@ -4,8 +4,15 @@ import { RangeToggle } from "../components/RangeToggle";
 import { formatDate, repoName } from "../lib/format";
 import { loadRun } from "../lib/load";
 import { useRuns } from "../lib/runs";
-import { filterByRange } from "../lib/stats";
-import type { FailedStep, NormalizedRun, RangeKey } from "../types";
+import { filterFailuresRange } from "../lib/stats";
+import type { FailedStep, FailuresRangeKey, NormalizedRun } from "../types";
+
+const FAILURE_RANGES: { key: FailuresRangeKey; label: string }[] = [
+  { key: "30", label: "30 days" },
+  { key: "90", label: "90 days" },
+  { key: "all", label: "All time" },
+  { key: "pr", label: "Latest PR" },
+];
 
 interface GroupedFailure {
   key: string;
@@ -23,7 +30,7 @@ function normalizeMessage(message: string): string {
 export function FailuresPage() {
   const { runs: live } = useRuns();
   const [details, setDetails] = useState<NormalizedRun[]>([]);
-  const [range, setRange] = useState<RangeKey>("90");
+  const [range, setRange] = useState<FailuresRangeKey>("90");
 
   useEffect(() => {
     const failed = live.filter((run) => run.status === "failed" || (run.cases_failed || 0) > 0);
@@ -32,7 +39,10 @@ export function FailuresPage() {
     });
   }, [live]);
 
-  const visibleIds = useMemo(() => new Set(filterByRange(live, range).map((run) => run.id)), [live, range]);
+  const visibleIds = useMemo(
+    () => new Set(filterFailuresRange(live, range).map((run) => run.id)),
+    [live, range],
+  );
   const groups = useMemo(() => {
     const map = new Map<string, GroupedFailure>();
     for (const run of details) {
@@ -67,9 +77,18 @@ export function FailuresPage() {
           <h2 className="page-title">Failures</h2>
           <p className="page-lead">Repeated problems, grouped by the message testers would recognize.</p>
         </div>
-        <RangeToggle value={range} onChange={setRange} />
+        <RangeToggle
+          value={range}
+          onChange={setRange}
+          options={FAILURE_RANGES}
+          label="Failure range"
+        />
       </div>
-      {!groups.length && <p className="empty">No failures in this period.</p>}
+      {!groups.length && (
+        <p className="empty">
+          {range === "pr" ? "No failures from the latest pull request." : "No failures in this period."}
+        </p>
+      )}
       {groups.map((group) => (
         <article key={group.key} className="card fail-group">
           <h3>{group.message}</h3>
@@ -79,8 +98,8 @@ export function FailuresPage() {
           </p>
           <ul className="steps">
             {group.runs.map((item) => (
-              <li key={`${item.id}-${item.step?.step || 0}`} className="step">
-                <span className="pill failed">{item.suite}</span>
+              <li key={`${item.id}-${item.step?.step || 0}`} className="step fail-row">
+                <span className="pill failed suite">{item.suite}</span>
                 <div>
                   <Link className="linkish" to={`/run/${item.id}`}>
                     {repoName(item.repo)} · {formatDate(item.started_at)}

@@ -6,10 +6,21 @@ const OPTIONS: { key: RangeKey; label: string }[] = [
   { key: "all", label: "All history" },
 ];
 
-export function RangeToggle({ value, onChange }: { value: RangeKey; onChange: (key: RangeKey) => void }) {
+export function RangeToggle<T extends string = RangeKey>({
+  value,
+  onChange,
+  options,
+  label = "Time range",
+}: {
+  value: T;
+  onChange: (key: T) => void;
+  options?: { key: T; label: string }[];
+  label?: string;
+}) {
+  const items = options ?? (OPTIONS as { key: T; label: string }[]);
   return (
-    <div className="range" role="group" aria-label="Time range">
-      {OPTIONS.map((option) => (
+    <div className="range" role="group" aria-label={label}>
+      {items.map((option) => (
         <button
           key={option.key}
           type="button"
