@@ -1,0 +1,1127 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-32641549307-fall-detection",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "fall-detection",
+  "status": "failed",
+  "pass_rate": 0.8889,
+  "started_at": "2026-08-23T13:11:39.169Z",
+  "finished_at": "2026-08-23T13:13:18.398Z",
+  "duration_ms": 99229,
+  "pr": 8,
+  "branch": "feat/fall-detection-fixes",
+  "commit": "780aaa8",
+  "commit_owner": "carlosluna-sentika",
+  "github_run_id": "32641549307",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32641549307",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/32641549307",
+  "ingested_at": "2026-08-23T13:15:58.039Z",
+  "frontend_commit": "780aaa8",
+  "frontend_branch": "8/merge",
+  "spectra_version": "0.1.0",
+  "suite_file": "fall-detection.yaml",
+  "cases_passed": 8,
+  "cases_failed": 1,
+  "cases_skipped": 0,
+  "cases_total": 9,
+  "cases": [
+    {
+      "id": "FD-001",
+      "name": "UI show fall detection modal",
+      "status": "passed",
+      "duration_ms": 4287,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "description": "Start of the test: The Medical Reminder home screen should be our starting point.",
+          "status": "passed",
+          "duration_ms": 112,
+          "started_at": "2026-08-23T13:11:47.268Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001/FD-001-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2047,
+          "started_at": "2026-08-23T13:11:47.380Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001/FD-001-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 126,
+          "started_at": "2026-08-23T13:11:49.427Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001/FD-001-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 66,
+          "started_at": "2026-08-23T13:11:49.553Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001/FD-001-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 837,
+          "started_at": "2026-08-23T13:11:49.619Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001/FD-001-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 101,
+          "started_at": "2026-08-23T13:11:50.456Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001/FD-001-step5-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd001-fall-modal.png",
+            "similarity": "1",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001/FD-001-step5-actual-diff.png",
+            "message": "Screen match 1.0000 >= 0.8500"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FD-001-01",
+      "name": "User taps I'm OK shows safe confirmation (UI Click)",
+      "status": "passed",
+      "duration_ms": 4413,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 84,
+          "started_at": "2026-08-23T13:11:51.526Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2049,
+          "started_at": "2026-08-23T13:11:51.610Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 75,
+          "started_at": "2026-08-23T13:11:53.659Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 68,
+          "started_at": "2026-08-23T13:11:53.734Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "ui.click",
+          "status": "passed",
+          "duration_ms": 131,
+          "started_at": "2026-08-23T13:11:53.802Z",
+          "artifacts": {
+            "selector": "text=I'm OK",
+            "click_x": "538.0",
+            "click_y": "614.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 120,
+          "started_at": "2026-08-23T13:11:53.933Z",
+          "artifacts": {
+            "selector": "text=Glad to know you're safe.",
+            "match_x": "393.0",
+            "match_y": "446.0",
+            "match_w": "494.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 834,
+          "started_at": "2026-08-23T13:11:54.053Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 83,
+          "started_at": "2026-08-23T13:11:54.887Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step7-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd002-safe-confirmation.png",
+            "similarity": "1",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-01/FD-001-01-step7-actual-diff.png",
+            "message": "Screen match 1.0000 >= 0.8500"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FD-001-02",
+      "name": "User taps Help shows help alert (UI Click)",
+      "status": "passed",
+      "duration_ms": 4515,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 89,
+          "started_at": "2026-08-23T13:11:55.987Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2049,
+          "started_at": "2026-08-23T13:11:56.076Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 78,
+          "started_at": "2026-08-23T13:11:58.125Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 82,
+          "started_at": "2026-08-23T13:11:58.203Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "ui.click",
+          "status": "passed",
+          "duration_ms": 128,
+          "started_at": "2026-08-23T13:11:58.285Z",
+          "artifacts": {
+            "selector": "text=Help",
+            "click_x": "742.0",
+            "click_y": "614.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 124,
+          "started_at": "2026-08-23T13:11:58.413Z",
+          "artifacts": {
+            "selector": "text=Help is on the way.",
+            "match_x": "454.5",
+            "match_y": "387.0",
+            "match_w": "371.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 853,
+          "started_at": "2026-08-23T13:11:58.537Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 95,
+          "started_at": "2026-08-23T13:11:59.390Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step7-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd003-help-alert.png",
+            "similarity": "0.996662",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-001-02/FD-001-02-step7-actual-diff.png",
+            "message": "Screen match 0.9967 >= 0.8500"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FD-004",
+      "name": "UI show \"Help on the way\" after 30 secs",
+      "status": "failed",
+      "duration_ms": 38327,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 83,
+          "started_at": "2026-08-23T13:12:00.454Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-004/FD-004-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2044,
+          "started_at": "2026-08-23T13:12:00.537Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-004/FD-004-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 88,
+          "started_at": "2026-08-23T13:12:02.581Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-004/FD-004-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 83,
+          "started_at": "2026-08-23T13:12:02.669Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-004/FD-004-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.wait",
+          "status": "failed",
+          "duration_ms": 35057,
+          "started_at": "2026-08-23T13:12:02.752Z",
+          "message": "page.waitForFunction: Timeout 35000ms exceeded.",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-004/FD-004-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T13:12:37.809Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T13:12:37.810Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-23T13:12:37.811Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "page.waitForFunction: Timeout 35000ms exceeded."
+    },
+    {
+      "id": "FD-005",
+      "name": "UI show \"Help on the way\"",
+      "status": "passed",
+      "duration_ms": 4526,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 94,
+          "started_at": "2026-08-23T13:12:38.897Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2054,
+          "started_at": "2026-08-23T13:12:38.991Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 108,
+          "started_at": "2026-08-23T13:12:41.045Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 81,
+          "started_at": "2026-08-23T13:12:41.153Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 68,
+          "started_at": "2026-08-23T13:12:41.234Z",
+          "artifacts": {
+            "event": "HELP",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 93,
+          "started_at": "2026-08-23T13:12:41.302Z",
+          "artifacts": {
+            "selector": "text=Help is on the way.",
+            "match_x": "454.5",
+            "match_y": "387.0",
+            "match_w": "371.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 845,
+          "started_at": "2026-08-23T13:12:41.395Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 98,
+          "started_at": "2026-08-23T13:12:42.240Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step7-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd003-help-alert.png",
+            "similarity": "0.996605",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-005/FD-005-step7-actual-diff.png",
+            "message": "Screen match 0.9966 >= 0.8500"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FD-006",
+      "name": "UI redirect to home page and show \"Glad to know you are save\"",
+      "status": "passed",
+      "duration_ms": 4445,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 87,
+          "started_at": "2026-08-23T13:12:43.387Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2050,
+          "started_at": "2026-08-23T13:12:43.474Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 94,
+          "started_at": "2026-08-23T13:12:45.524Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 83,
+          "started_at": "2026-08-23T13:12:45.618Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 81,
+          "started_at": "2026-08-23T13:12:45.701Z",
+          "artifacts": {
+            "event": "I_AM_OK",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 81,
+          "started_at": "2026-08-23T13:12:45.782Z",
+          "artifacts": {
+            "selector": "text=Glad to know you're safe.",
+            "match_x": "393.0",
+            "match_y": "446.0",
+            "match_w": "494.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 845,
+          "started_at": "2026-08-23T13:12:45.863Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 76,
+          "started_at": "2026-08-23T13:12:46.708Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step7-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd002-safe-confirmation.png",
+            "similarity": "1",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-006/FD-006-step7-actual-diff.png",
+            "message": "Screen match 1.0000 >= 0.8500"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FD-007",
+      "name": "Change to stand by mode",
+      "status": "passed",
+      "duration_ms": 22711,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 91,
+          "started_at": "2026-08-23T13:12:47.725Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2052,
+          "started_at": "2026-08-23T13:12:47.816Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 115,
+          "started_at": "2026-08-23T13:12:49.868Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 84,
+          "started_at": "2026-08-23T13:12:49.983Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2039,
+          "started_at": "2026-08-23T13:12:50.067Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "status": "passed",
+          "duration_ms": 121,
+          "started_at": "2026-08-23T13:12:52.106Z",
+          "artifacts": {
+            "selector": "text=I'M OK",
+            "click_x": "538.0",
+            "click_y": "614.0",
+            "click_page_w": "1280",
+            "click_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2037,
+          "started_at": "2026-08-23T13:12:52.227Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 86,
+          "started_at": "2026-08-23T13:12:54.264Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step7-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd002-safe-confirmation.png",
+            "similarity": "1",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step7-actual-diff.png",
+            "message": "Screen match 1.0000 >= 0.8500"
+          }
+        },
+        {
+          "stepIndex": 8,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 15051,
+          "started_at": "2026-08-23T13:12:54.350Z",
+          "artifacts": {
+            "ms": "15000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step8-state.png"
+          }
+        },
+        {
+          "stepIndex": 9,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 95,
+          "started_at": "2026-08-23T13:13:09.401Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step9-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/smoke/sk001-home.png",
+            "similarity": "0.990712",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-007/FD-007-step9-actual-diff.png",
+            "message": "Screen match 0.9907 >= 0.8500"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FD-008",
+      "name": "Dispatch Event handler clickButtonOk",
+      "status": "passed",
+      "duration_ms": 4455,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 85,
+          "started_at": "2026-08-23T13:13:10.537Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2050,
+          "started_at": "2026-08-23T13:13:10.622Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 112,
+          "started_at": "2026-08-23T13:13:12.672Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 82,
+          "started_at": "2026-08-23T13:13:12.784Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 81,
+          "started_at": "2026-08-23T13:13:12.866Z",
+          "artifacts": {
+            "event": "I_AM_OK",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 82,
+          "started_at": "2026-08-23T13:13:12.947Z",
+          "artifacts": {
+            "selector": "text=Glad to know you're safe.",
+            "match_x": "393.0",
+            "match_y": "446.0",
+            "match_w": "494.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 837,
+          "started_at": "2026-08-23T13:13:13.029Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 85,
+          "started_at": "2026-08-23T13:13:13.866Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step7-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd002-safe-confirmation.png",
+            "similarity": "1",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-008/FD-008-step7-actual-diff.png",
+            "message": "Screen match 1.0000 >= 0.8500"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FD-009",
+      "name": "Dispatch Event handler clickButtonOk (HELP Case)",
+      "status": "passed",
+      "duration_ms": 4447,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 82,
+          "started_at": "2026-08-23T13:13:14.940Z",
+          "artifacts": {
+            "selector": "text=Medical Reminder",
+            "match_x": "220.5",
+            "match_y": "499.0",
+            "match_w": "308.9",
+            "match_h": "54.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 2044,
+          "started_at": "2026-08-23T13:13:15.022Z",
+          "artifacts": {
+            "ms": "2000",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 99,
+          "started_at": "2026-08-23T13:13:17.066Z",
+          "artifacts": {
+            "event": "INCIDENT_FALL_EVENT_DETECTED",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step2-state.png"
+          }
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 104,
+          "started_at": "2026-08-23T13:13:17.166Z",
+          "artifacts": {
+            "selector": "text=Possible Fall Detected",
+            "match_x": "422.0",
+            "match_y": "329.0",
+            "match_w": "436.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step3-state.png"
+          }
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "passed",
+          "duration_ms": 101,
+          "started_at": "2026-08-23T13:13:17.270Z",
+          "artifacts": {
+            "event": "HELP",
+            "payload": "{\"datetime\":\"7/16/2026 08:00:00\"}",
+            "clients": "1",
+            "direction": "robot→ui",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step4-state.png"
+          }
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "passed",
+          "duration_ms": 82,
+          "started_at": "2026-08-23T13:13:17.371Z",
+          "artifacts": {
+            "selector": "text=Help is on the way.",
+            "match_x": "454.5",
+            "match_y": "387.0",
+            "match_w": "371.0",
+            "match_h": "42.0",
+            "match_page_w": "1280",
+            "match_page_h": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step5-state.png"
+          }
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "passed",
+          "duration_ms": 854,
+          "started_at": "2026-08-23T13:13:17.453Z",
+          "artifacts": {
+            "ms": "800",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step6-state.png"
+          }
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "passed",
+          "duration_ms": 91,
+          "started_at": "2026-08-23T13:13:18.307Z",
+          "artifacts": {
+            "actual": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step7-actual.png",
+            "baseline": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/baselines/fall/fd003-help-alert.png",
+            "similarity": "0.996482",
+            "threshold": "0.85",
+            "diff": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-009/FD-009-step7-actual-diff.png",
+            "message": "Screen match 0.9965 >= 0.8500"
+          }
+        }
+      ]
+    }
+  ],
+  "failed_steps": [
+    {
+      "case_id": "FD-004",
+      "case_name": "UI show \"Help on the way\" after 30 secs",
+      "step": 5,
+      "type": "socket.wait",
+      "message": "page.waitForFunction: Timeout 35000ms exceeded.",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-23T13-11-39-169Z/FD-004/FD-004-step4-state.png"
+    }
+  ]
+}
