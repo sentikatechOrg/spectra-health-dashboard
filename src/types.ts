@@ -92,6 +92,7 @@ export interface SpectraReport {
 }
 
 export type RangeKey = "30" | "90" | "all";
+export type FailuresRangeKey = RangeKey | "pr";
 
 export interface DashboardConfig {
   org: string;
