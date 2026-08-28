@@ -1,0 +1,356 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-33164560637-alarm",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "alarm",
+  "status": "failed",
+  "pass_rate": 0,
+  "started_at": "2026-08-28T10:46:29.030Z",
+  "finished_at": "2026-08-28T10:46:47.696Z",
+  "duration_ms": 18666,
+  "pr": 11,
+  "branch": "feature/harden-frontend-cicd",
+  "commit": "7fee72b",
+  "commit_owner": "davidswaroop-hue",
+  "github_run_id": "33164560637",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/33164560637",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/33164560637",
+  "ingested_at": "2026-08-28T10:49:59.322Z",
+  "frontend_commit": "7fee72b",
+  "frontend_branch": "11/merge",
+  "spectra_version": "0.1.0",
+  "suite_file": "alarm.yaml",
+  "cases_passed": 0,
+  "cases_failed": 1,
+  "cases_skipped": 0,
+  "cases_total": 1,
+  "cases": [
+    {
+      "id": "AL-001",
+      "name": "Set up an alarm",
+      "status": "failed",
+      "duration_ms": 11621,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "api.mock",
+          "description": "Stub Sentika reminders REST API for offline UI testing",
+          "status": "passed",
+          "duration_ms": 54,
+          "started_at": "2026-08-28T10:46:37.571Z",
+          "artifacts": {
+            "routes": "(already registered)",
+            "route_count": "11",
+            "reload": "false",
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-28T10-46-29-030Z/AL-001/AL-001-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "ui.wait",
+          "description": "Starting point, Home Page",
+          "status": "failed",
+          "duration_ms": 10033,
+          "started_at": "2026-08-28T10:46:37.625Z",
+          "message": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-28T10-46-29-030Z/AL-001/AL-001-step1-state.png"
+          }
+        },
+        {
+          "stepIndex": 2,
+          "type": "ui.click",
+          "description": "Enter into the Alarm VIew",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.658Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "description": "Confirm transition to Alarms view",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.659Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "screen.assert",
+          "description": "Assert GUI",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.660Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "description": "Setup new Alarm",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.661Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "set_time",
+          "description": "Alarm target = now + 2 minutes (stored as variable)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.663Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "ui.click",
+          "description": "Set hour from stored alarm time",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.664Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 8,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.665Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 9,
+          "type": "ui.click",
+          "description": "Set minute from stored alarm time",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.666Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 10,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.667Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 11,
+          "type": "ui.click",
+          "description": "Set am/pm from stored alarm time",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.670Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 12,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.673Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 13,
+          "type": "ui.click",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.675Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 14,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.677Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 15,
+          "type": "ui.click",
+          "description": "Select today's weekday (Sentika day picker label for run time, e.g. Fr)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.678Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 16,
+          "type": "ui.click",
+          "description": "Enable repeat weekly toggle",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.679Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 17,
+          "type": "ui.click",
+          "description": "Save alarm and return to list",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.680Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 18,
+          "type": "ui.wait",
+          "description": "Back on alarms list (wait for list-only control, not edit header)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.681Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 19,
+          "type": "wait",
+          "description": "Wait until 1 minute before alarm fires",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.683Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 20,
+          "type": "screen.capture",
+          "description": "Screenshot 1 min before alarm",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.684Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 21,
+          "type": "wait",
+          "description": "Wait until alarm time",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.685Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 22,
+          "type": "ui.wait",
+          "description": "Wait for alarm modal (scheduler heartbeat is minute-aligned, up to ~60s skew)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.686Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 23,
+          "type": "screen.capture",
+          "description": "Screenshot when alarm modal is visible",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.687Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 24,
+          "type": "ui.click",
+          "description": "Snooze (Sentika ALARM_SNOOZE_TIME_MINUTES = 1 min re-fire)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.688Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 25,
+          "type": "wait",
+          "description": "Allow dismiss animation",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.688Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 26,
+          "type": "screen.capture",
+          "description": "Screenshot after snooze (modal dismissed)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.689Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 27,
+          "type": "screen.wait_change",
+          "description": "Wait for snooze reactivation (~1 min snooze + minute-aligned heartbeat)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.690Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 28,
+          "type": "screen.capture",
+          "description": "Screenshot when alarm modal reappears",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.690Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 29,
+          "type": "ui.click",
+          "description": "Stop/dismiss the reactivated alarm",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.692Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 30,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.692Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 31,
+          "type": "screen.capture",
+          "description": "Screenshot immediately after Stop",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.693Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 32,
+          "type": "wait",
+          "description": "Wait 90s after stop (past snooze window; alarm should stay quiet)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.694Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 33,
+          "type": "screen.capture",
+          "description": "Screenshot 90s after stop (alarm should stay quiet)",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-28T10:46:47.695Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    }
+  ],
+  "failed_steps": [
+    {
+      "case_id": "AL-001",
+      "case_name": "Set up an alarm",
+      "step": 2,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-28T10-46-29-030Z/AL-001/AL-001-step1-state.png"
+    }
+  ]
+}
