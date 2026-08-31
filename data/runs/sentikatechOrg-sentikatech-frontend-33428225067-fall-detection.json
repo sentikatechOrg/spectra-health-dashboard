@@ -1,0 +1,788 @@
+{
+  "id": "sentikatechOrg-sentikatech-frontend-33428225067-fall-detection",
+  "repo": "sentikatechOrg/sentikatech-frontend",
+  "org": "sentikatechOrg",
+  "suite": "fall-detection",
+  "status": "failed",
+  "pass_rate": 0,
+  "started_at": "2026-08-31T19:02:15.666Z",
+  "finished_at": "2026-08-31T19:05:30.764Z",
+  "duration_ms": 195098,
+  "pr": 12,
+  "branch": "feature/justus-wp10.4-wp10.5-wp10.6-wifi-fixes-and-icon",
+  "commit": "e42c501",
+  "commit_owner": "justushorberg-sentika",
+  "github_run_id": "33428225067",
+  "github_run_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/33428225067",
+  "workflow_url": "https://github.com/sentikatechOrg/sentikatech-frontend/actions/runs/33428225067",
+  "ingested_at": "2026-08-31T19:06:01.413Z",
+  "frontend_commit": "e42c501",
+  "frontend_branch": "12/merge",
+  "spectra_version": "0.1.0",
+  "suite_file": "fall-detection.yaml",
+  "cases_passed": 0,
+  "cases_failed": 9,
+  "cases_skipped": 0,
+  "cases_total": 9,
+  "cases": [
+    {
+      "id": "FD-001",
+      "name": "UI show fall detection modal",
+      "status": "failed",
+      "duration_ms": 20989,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "description": "Start of the test: The Medical Reminder home screen should be our starting point.",
+          "status": "failed",
+          "duration_ms": 20079,
+          "started_at": "2026-08-31T19:02:23.020Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-001/FD-001-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:02:43.099Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:02:43.102Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:02:43.103Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:02:43.104Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:02:43.105Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-001-01",
+      "name": "User taps I'm OK shows safe confirmation (UI Click)",
+      "status": "failed",
+      "duration_ms": 20915,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20063,
+          "started_at": "2026-08-31T19:02:43.953Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-001-01/FD-001-01-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:04.016Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:04.019Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:04.021Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "ui.click",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:04.021Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:04.022Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:04.023Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:04.023Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-001-02",
+      "name": "User taps Help shows help alert (UI Click)",
+      "status": "failed",
+      "duration_ms": 21030,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20063,
+          "started_at": "2026-08-31T19:03:04.986Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-001-02/FD-001-02-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:25.049Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:25.050Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:25.051Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "ui.click",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:25.052Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:25.053Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:25.053Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:25.054Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-004",
+      "name": "UI show \"Help on the way\" after 30 secs",
+      "status": "failed",
+      "duration_ms": 20914,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20064,
+          "started_at": "2026-08-31T19:03:25.897Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-004/FD-004-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:45.961Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:45.963Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:45.964Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:45.965Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:45.966Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:45.966Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:03:45.967Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-005",
+      "name": "UI show \"Help on the way\"",
+      "status": "failed",
+      "duration_ms": 20985,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20059,
+          "started_at": "2026-08-31T19:03:46.887Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-005/FD-005-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:06.946Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:06.947Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:06.948Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:06.950Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:06.951Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:06.951Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:06.952Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-006",
+      "name": "UI redirect to home page and show \"Glad to know you are save\"",
+      "status": "failed",
+      "duration_ms": 20913,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20076,
+          "started_at": "2026-08-31T19:04:07.784Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-006/FD-006-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:27.860Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:27.861Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:27.862Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:27.863Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:27.863Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:27.865Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:27.865Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-007",
+      "name": "Change to stand by mode",
+      "status": "failed",
+      "duration_ms": 21002,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20078,
+          "started_at": "2026-08-31T19:04:28.783Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-007/FD-007-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.861Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.862Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.863Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.863Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.click",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.864Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.865Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.866Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 8,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.867Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 9,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:04:48.867Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-008",
+      "name": "Dispatch Event handler clickButtonOk",
+      "status": "failed",
+      "duration_ms": 20918,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20076,
+          "started_at": "2026-08-31T19:04:49.704Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-008/FD-008-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:09.780Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:09.781Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:09.782Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:09.782Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:09.783Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:09.784Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:09.785Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    },
+    {
+      "id": "FD-009",
+      "name": "Dispatch Event handler clickButtonOk (HELP Case)",
+      "status": "failed",
+      "duration_ms": 20978,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "type": "ui.wait",
+          "status": "failed",
+          "duration_ms": 20063,
+          "started_at": "2026-08-31T19:05:10.694Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n",
+          "artifacts": {
+            "state": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-009/FD-009-step0-state.png"
+          }
+        },
+        {
+          "stepIndex": 1,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:30.757Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 2,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:30.758Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 3,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:30.759Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 4,
+          "type": "socket.inject",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:30.760Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 5,
+          "type": "ui.wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:30.760Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 6,
+          "type": "wait",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:30.763Z",
+          "message": "Skipped due to earlier failure"
+        },
+        {
+          "stepIndex": 7,
+          "type": "screen.assert",
+          "status": "skipped",
+          "duration_ms": 0,
+          "started_at": "2026-08-31T19:05:30.764Z",
+          "message": "Skipped due to earlier failure"
+        }
+      ],
+      "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible\n"
+    }
+  ],
+  "failed_steps": [
+    {
+      "case_id": "FD-001",
+      "case_name": "UI show fall detection modal",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-001/FD-001-step0-state.png"
+    },
+    {
+      "case_id": "FD-001-01",
+      "case_name": "User taps I'm OK shows safe confirmation (UI Click)",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-001-01/FD-001-01-step0-state.png"
+    },
+    {
+      "case_id": "FD-001-02",
+      "case_name": "User taps Help shows help alert (UI Click)",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-001-02/FD-001-02-step0-state.png"
+    },
+    {
+      "case_id": "FD-004",
+      "case_name": "UI show \"Help on the way\" after 30 secs",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-004/FD-004-step0-state.png"
+    },
+    {
+      "case_id": "FD-005",
+      "case_name": "UI show \"Help on the way\"",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-005/FD-005-step0-state.png"
+    },
+    {
+      "case_id": "FD-006",
+      "case_name": "UI redirect to home page and show \"Glad to know you are save\"",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-006/FD-006-step0-state.png"
+    },
+    {
+      "case_id": "FD-007",
+      "case_name": "Change to stand by mode",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-007/FD-007-step0-state.png"
+    },
+    {
+      "case_id": "FD-008",
+      "case_name": "Dispatch Event handler clickButtonOk",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-008/FD-008-step0-state.png"
+    },
+    {
+      "case_id": "FD-009",
+      "case_name": "Dispatch Event handler clickButtonOk (HELP Case)",
+      "step": 1,
+      "type": "ui.wait",
+      "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator('text=Medical Reminder').first() to be visible",
+      "screenshot": "/home/runner/work/sentikatech-frontend/sentikatech-frontend/spectra/reports/artifacts/2026-08-31T19-02-15-666Z/FD-009/FD-009-step0-state.png"
+    }
+  ]
+}
